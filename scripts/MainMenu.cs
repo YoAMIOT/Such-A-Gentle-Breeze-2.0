@@ -3,62 +3,54 @@ using System;
 
 public class MainMenu : Control
 {
+    private Control mainMenu;
     private Button startNewBtn;
     private Button continueBtn;
     private Button optionsBtn;
     private Button quitBtn;
+    private Control optionsMenu;
+    private Button backBtn;
 
 
 
     //Ready Function
     public override void _Ready(){
-        startNewBtn = GetNode<Button>("StartNewBtn");
-        startNewBtn.Connect("mouse_entered", this, "startNewBtn_mouseEntered");
-        startNewBtn.Connect("mouse_exited", this, "startNewBtn_mouseExited");
+        mainMenu = GetNode<Control>("Menu");
 
-        continueBtn = GetNode<Button>("ContinueBtn");
-        continueBtn.Connect("mouse_entered", this, "continueBtn_mouseEntered");
-        continueBtn.Connect("mouse_exited", this, "continueBtn_mouseExited");
+        startNewBtn = GetNode<Button>("Menu/StartNewBtn");
+        startNewBtn.Connect("pressed", this, "startNewBtn_pressed");
 
-        optionsBtn = GetNode<Button>("OptionsBtn");
-        optionsBtn.Connect("mouse_entered", this, "optionsBtn_mouseEntered");
-        optionsBtn.Connect("mouse_exited", this, "optionsBtn_mouseExited");
+        continueBtn = GetNode<Button>("Menu/ContinueBtn");
+        continueBtn.Connect("pressed", this, "continueBtn_pressed");
 
-        quitBtn = GetNode<Button>("QuitBtn");
-        quitBtn.Connect("mouse_entered", this, "quitBtn_mouseEntered");
-        quitBtn.Connect("mouse_exited", this, "quitBtn_mouseExited");
+        optionsBtn = GetNode<Button>("Menu/OptionsBtn");
+        optionsBtn.Connect("pressed", this, "optionsBtn_pressed");
+
+        quitBtn = GetNode<Button>("Menu/QuitBtn");
+        quitBtn.Connect("pressed", this, "quitBtn_pressed");
+
+        optionsMenu = GetNode<Control>("OptionsMenu");
+
+        backBtn = GetNode<Button>("OptionsMenu/BackBtn");
+        backBtn.Connect("pressed", this, "backBtn_pressed");
     }
 
-
-
-    //Signals Functions
-    void startNewBtn_mouseEntered(){
-        GD.Print("entered");
+    //Pressed Button Functions
+    void startNewBtn_pressed(){
+        GD.Print("StartNewPressed");
     }
-    void startNewBtn_mouseExited(){
-        GD.Print("exited");
+     void continueBtn_pressed(){
+        GD.Print("ContinuePressed");
     }
-
-    void continueBtn_mouseEntered(){
-        GD.Print("entered");
+     void optionsBtn_pressed(){
+        mainMenu.SetVisible(false);
+        optionsMenu.SetVisible(true);
     }
-
-     void continueBtn_mouseExited(){
-        GD.Print("exited");
+     void quitBtn_pressed(){
+        GetTree().Quit();
     }
-
-    void optionsBtn_mouseEntered(){
-        GD.Print("entered");
-    }
-
-    void optionsBtn_mouseExited(){
-        GD.Print("exited");
-    }
-
-    void quitBtn_mouseEntered(){
-        GD.Print("entered");
-    }
-    void quitBtn_mouseExited(){
-        GD.Print("exited");
+    void backBtn_pressed(){
+        optionsMenu.SetVisible(false);
+        mainMenu.SetVisible(true);
     }
 }

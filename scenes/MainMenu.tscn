@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ressources/buttonStyleBoxes/Hover.tres" type="StyleBox" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://ressources/buttonStyleBoxes/Pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://scenes/CRT_Shader.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/MainMenu.cs" type="Script" id=6]
+[ext_resource path="res://ressources/img/Logo.png" type="Texture" id=7]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -15,17 +16,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StartNewBtn" type="Button" parent="."]
-anchor_left = 0.441
-anchor_top = 0.588
-anchor_right = 0.56
-anchor_bottom = 0.627
-margin_left = -0.220032
-margin_top = 4.96002
-margin_right = -0.699951
-margin_bottom = 4.83997
+[node name="CRT_Shader" parent="." instance=ExtResource( 5 )]
+
+[node name="Menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartNewBtn" type="Button" parent="Menu"]
+anchor_left = 0.385
+anchor_top = 0.59
+anchor_right = 0.615
+anchor_bottom = 0.661
+margin_left = 0.940125
+margin_top = 0.52002
+margin_right = -0.940186
+margin_bottom = 0.399963
 focus_neighbour_top = NodePath("../QuitBtn")
 focus_neighbour_bottom = NodePath("../ContinueBtn")
+custom_colors/font_color = Color( 0.184314, 0.878431, 0.0862745, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 4 )
@@ -36,35 +47,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ContinueBtn" type="Button" parent="."]
-anchor_left = 0.445
-anchor_top = 0.648
-anchor_right = 0.555
-anchor_bottom = 0.687
-margin_left = -0.900024
-margin_top = 4.15997
-margin_right = 0.900024
-margin_bottom = 4.03998
+[node name="ContinueBtn" type="Button" parent="Menu"]
+anchor_left = 0.394
+anchor_top = 0.663
+anchor_right = 0.606
+anchor_bottom = 0.734
+margin_left = -0.380066
+margin_top = -0.320007
+margin_right = 0.380005
+margin_bottom = -0.440063
 focus_neighbour_top = NodePath("../StartNewBtn")
 focus_neighbour_bottom = NodePath("../OptionsBtn")
+custom_colors/font_color = Color( 0.184314, 0.878431, 0.0862745, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 2 )
 custom_styles/normal = ExtResource( 3 )
 text = "Continue story"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="OptionsBtn" type="Button" parent="."]
-anchor_left = 0.469
-anchor_top = 0.711
-anchor_right = 0.53
-anchor_bottom = 0.75
-margin_left = 0.519958
-margin_top = 0.119995
-margin_right = 0.399963
-margin_bottom = -6.10352e-05
+[node name="OptionsBtn" type="Button" parent="Menu"]
+anchor_left = 0.443
+anchor_top = 0.734
+anchor_right = 0.557
+anchor_bottom = 0.805
+margin_left = -0.400024
+margin_top = -0.00012207
+margin_right = 0.399902
+margin_bottom = -0.120117
 focus_neighbour_top = NodePath("../ContinueBtn")
 focus_neighbour_bottom = NodePath("../QuitBtn")
+custom_colors/font_color = Color( 0.184314, 0.878431, 0.0862745, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 4 )
@@ -75,18 +91,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuitBtn" type="Button" parent="."]
+[node name="QuitBtn" type="Button" parent="Menu"]
 show_behind_parent = true
-anchor_left = 0.463
-anchor_top = 0.77
-anchor_right = 0.537
-anchor_bottom = 0.809
-margin_left = -0.960083
-margin_top = 0.399963
-margin_right = -1.04004
-margin_bottom = 0.279968
+anchor_left = 0.43
+anchor_top = 0.805
+anchor_right = 0.57
+anchor_bottom = 0.876
+margin_left = -0.160095
+margin_top = 0.319824
+margin_right = 0.159912
+margin_bottom = 0.19989
 focus_neighbour_top = NodePath("../OptionsBtn")
 focus_neighbour_bottom = NodePath("../StartNewBtn")
+custom_colors/font_color = Color( 0.184314, 0.878431, 0.0862745, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 4 )
@@ -97,4 +114,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CRT_Shader" parent="." instance=ExtResource( 5 )]
+[node name="Logo" type="Sprite" parent="Menu"]
+position = Vector2( 960, 414 )
+scale = Vector2( 12, 12 )
+texture = ExtResource( 7 )
+
+[node name="OptionsMenu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="Button" parent="OptionsMenu"]
+anchor_left = 0.443
+anchor_top = 0.734
+anchor_right = 0.557
+anchor_bottom = 0.805
+margin_left = -770.56
+margin_top = 167.28
+margin_right = -797.44
+margin_bottom = 167.6
+focus_neighbour_top = NodePath("../../Menu/ContinueBtn")
+focus_neighbour_bottom = NodePath("../../Menu/QuitBtn")
+custom_colors/font_color = Color( 0.184314, 0.878431, 0.0862745, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
