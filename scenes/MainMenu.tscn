@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ressources/buttonStyleBoxes/Hover.tres" type="StyleBox" id=2]
+[ext_resource path="res://ressources/buttonStyleBoxes/Normal.tres" type="StyleBox" id=3]
+[ext_resource path="res://ressources/buttonStyleBoxes/Pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://scenes/CRT_Shader.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/MainMenu.cs" type="Script" id=6]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartNewBtn" type="Button" parent="."]
+anchor_left = 0.441
+anchor_top = 0.588
+anchor_right = 0.56
+anchor_bottom = 0.627
+margin_left = -0.220032
+margin_top = 4.96002
+margin_right = -0.699951
+margin_bottom = 4.83997
+focus_neighbour_top = NodePath("../QuitBtn")
+focus_neighbour_bottom = NodePath("../ContinueBtn")
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Start new story"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueBtn" type="Button" parent="."]
+anchor_left = 0.445
+anchor_top = 0.648
+anchor_right = 0.555
+anchor_bottom = 0.687
+margin_left = -0.900024
+margin_top = 4.15997
+margin_right = 0.900024
+margin_bottom = 4.03998
+focus_neighbour_top = NodePath("../StartNewBtn")
+focus_neighbour_bottom = NodePath("../OptionsBtn")
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Continue story"
+
+[node name="OptionsBtn" type="Button" parent="."]
+anchor_left = 0.469
+anchor_top = 0.711
+anchor_right = 0.53
+anchor_bottom = 0.75
+margin_left = 0.519958
+margin_top = 0.119995
+margin_right = 0.399963
+margin_bottom = -6.10352e-05
+focus_neighbour_top = NodePath("../ContinueBtn")
+focus_neighbour_bottom = NodePath("../QuitBtn")
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitBtn" type="Button" parent="."]
+show_behind_parent = true
+anchor_left = 0.463
+anchor_top = 0.77
+anchor_right = 0.537
+anchor_bottom = 0.809
+margin_left = -0.960083
+margin_top = 0.399963
+margin_right = -1.04004
+margin_bottom = 0.279968
+focus_neighbour_top = NodePath("../OptionsBtn")
+focus_neighbour_bottom = NodePath("../StartNewBtn")
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Quit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CRT_Shader" parent="." instance=ExtResource( 5 )]

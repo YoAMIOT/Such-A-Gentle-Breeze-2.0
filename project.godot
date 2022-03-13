@@ -11,7 +11,16 @@ config_version=4
 [application]
 
 config/name="Such A Gentle Breeze 2.0"
+run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/resizable=false
+window/size/borderless=true
+window/stretch/mode="viewport"
 
 [physics]
 
@@ -19,4 +28,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0.105882, 0.105882, 0.105882, 1 )
 environment/default_environment="res://default_env.tres"

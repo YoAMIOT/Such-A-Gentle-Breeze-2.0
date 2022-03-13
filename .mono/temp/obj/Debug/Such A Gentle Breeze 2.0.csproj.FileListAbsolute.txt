@@ -1,0 +1,9 @@
+C:\Users\Arcad\Documents\GodotProjects\Such A Gentle Breeze 2.0\.mono\temp\bin\Debug\Such A Gentle Breeze 2.0.dll
+C:\Users\Arcad\Documents\GodotProjects\Such A Gentle Breeze 2.0\.mono\temp\bin\Debug\Such A Gentle Breeze 2.0.pdb
+C:\Users\Arcad\Documents\GodotProjects\Such A Gentle Breeze 2.0\.mono\temp\obj\Debug\Such A Gentle Breeze 2.0.csproj.AssemblyReference.cache
+C:\Users\Arcad\Documents\GodotProjects\Such A Gentle Breeze 2.0\.mono\temp\obj\Debug\Such A Gentle Breeze 2.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arcad\Documents\GodotProjects\Such A Gentle Breeze 2.0\.mono\temp\obj\Debug\Such A Gentle Breeze 2.0.AssemblyInfoInputs.cache
+C:\Users\Arcad\Documents\GodotProjects\Such A Gentle Breeze 2.0\.mono\temp\obj\Debug\Such A Gentle Breeze 2.0.AssemblyInfo.cs
+C:\Users\Arcad\Documents\GodotProjects\Such A Gentle Breeze 2.0\.mono\temp\obj\Debug\Such A Gentle Breeze 2.0.csproj.CoreCompileInputs.cache
+C:\Users\Arcad\Documents\GodotProjects\Such A Gentle Breeze 2.0\.mono\temp\obj\Debug\Such A Gentle Breeze 2.0.dll
+C:\Users\Arcad\Documents\GodotProjects\Such A Gentle Breeze 2.0\.mono\temp\obj\Debug\Such A Gentle Breeze 2.0.pdb
