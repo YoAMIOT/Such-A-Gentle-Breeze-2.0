@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/godotLogo.png-1b94ec1d81571b7ebd3e41f27152a5a2.stex"
+path="res://.import/blackSplash.png-de83c87eacdf11878b58b5669639ad81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/img/godotLogo.png"
-dest_files=[ "res://.import/godotLogo.png-1b94ec1d81571b7ebd3e41f27152a5a2.stex" ]
+source_file="res://ressources/img/blackSplash.png"
+dest_files=[ "res://.import/blackSplash.png-de83c87eacdf11878b58b5669639ad81.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -12,6 +12,7 @@ config_version=4
 
 config/name="Such A Gentle Breeze 2.0"
 run/main_scene="res://scenes/MainMenu.tscn"
+boot_splash/image="res://ressources/img/blackSplash.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
