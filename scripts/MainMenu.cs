@@ -43,14 +43,14 @@ public class MainMenu : Control
         GD.Print("ContinuePressed");
     }
      void optionsBtn_pressed(){
-        mainMenu.SetVisible(false);
-        optionsMenu.SetVisible(true);
+        mainMenu.SetVisible(!mainMenu.IsVisible());
+        optionsMenu.SetVisible(!optionsMenu.IsVisible());
     }
      void quitBtn_pressed(){
         GetTree().Quit();
     }
     void backBtn_pressed(){
-        optionsMenu.SetVisible(false);
-        mainMenu.SetVisible(true);
+        optionsMenu.SetVisible(!optionsMenu.IsVisible());
+        mainMenu.SetVisible(!mainMenu.IsVisible());
     }
 }

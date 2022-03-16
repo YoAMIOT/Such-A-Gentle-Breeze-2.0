@@ -75,8 +75,8 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 2, 2.2, 5.5, 6 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 2.2, 5.5, 6 )
 }
 tracks/7/type = "bezier"
 tracks/7/path = NodePath("OSLabel:custom_colors/font_color:a")
@@ -206,7 +206,7 @@ margin_right = -320.92
 margin_bottom = -36.56
 rect_scale = Vector2( 1e-05, 1e-05 )
 rect_pivot_offset = Vector2( 160.667, 17.3333 )
-custom_colors/font_color = Color( 0.184314, 0.878431, 0.0862745, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 3 )
 text = "gentleBreeze OS v2.0.0"
 __meta__ = {
@@ -245,7 +245,7 @@ margin_top = 0.159912
 margin_right = -50.3601
 margin_bottom = 0.519897
 rect_pivot_offset = Vector2( 128, 13 )
-custom_colors/font_color = Color( 0.184314, 0.878431, 0.0862745, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 3 )
 text = "Made with: Godot Engine 3.4"
 __meta__ = {
