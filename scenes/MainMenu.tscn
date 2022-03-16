@@ -171,6 +171,7 @@ __meta__ = {
 [node name="ColorPicker" type="Control" parent="OptionsMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -201,9 +202,23 @@ margin_left = -0.880005
 margin_top = 34.56
 margin_right = -0.120117
 margin_bottom = 35.44
-min_value = 1.0
-max_value = 255.0
+max_value = 1.0
+step = 0.01
 value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedCount" type="Label" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.692
+anchor_top = 0.415
+anchor_right = 0.725
+anchor_bottom = 0.448
+margin_left = -0.640015
+margin_top = -0.200012
+margin_bottom = 0.159973
+custom_fonts/font = ExtResource( 1 )
+text = "255"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -234,12 +249,23 @@ margin_left = -0.880005
 margin_top = 34.84
 margin_right = -0.120117
 margin_bottom = 34.64
-min_value = 1.0
-max_value = 255.0
+max_value = 1.0
+step = 0.01
 value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GreenCount" type="Label" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.692
+anchor_top = 0.474
+anchor_right = 0.725
+anchor_bottom = 0.507
+margin_left = -0.640015
+margin_top = 0.0799561
+margin_bottom = 0.439941
+custom_fonts/font = ExtResource( 1 )
+text = "255"
 
 [node name="BlueLabel" type="Label" parent="OptionsMenu/ColorPicker"]
 anchor_left = 0.484
@@ -267,6 +293,17 @@ margin_left = -0.880005
 margin_top = 35.1199
 margin_right = -0.120117
 margin_bottom = 34.92
-min_value = 1.0
-max_value = 255.0
+max_value = 1.0
+step = 0.01
 value = 1.0
+
+[node name="BlueCount" type="Label" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.692
+anchor_top = 0.533
+anchor_right = 0.725
+anchor_bottom = 0.567
+margin_left = -0.640015
+margin_top = 0.359924
+margin_bottom = -0.360046
+custom_fonts/font = ExtResource( 1 )
+text = "255"

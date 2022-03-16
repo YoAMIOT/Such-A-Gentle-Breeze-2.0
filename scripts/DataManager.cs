@@ -4,30 +4,53 @@ using System;
 public class DataManager : Node
 {
     private string optionsFile = "user://saveOptions.save";
-    private int red;
-    private int green;
-    private int blue;
+    public Color uiColor;
+
+
+
+    //Ready Function
     public override void _Ready()
     {
         loadOptionsData();
     }
 
+
+
+    //Save Options
     public void saveOptionsData(){
         File saveOptions = new File();
         saveOptions.Open(optionsFile, File.ModeFlags.Write);
-        saveOptions.StoreVar(red);
-        saveOptions.StoreVar(green);
-        saveOptions.StoreVar(blue);
+            saveOptions.StoreVar(uiColor);
         saveOptions.Close();
     }
-
+    //Load Options
     public void loadOptionsData(){
         File loadOptions = new File();
         if(loadOptions.FileExists(optionsFile)){
-            loadOptions.Open(optionsFile, File.ModeFlags.Write);
-            this.red = (int)loadOptions.GetVar();
-            this.green = (int)loadOptions.GetVar();
-            this.blue = (int)loadOptions.GetVar();
+            loadOptions.Open(optionsFile, File.ModeFlags.Read);
+            uiColor = (Color)loadOptions.GetVar();
         }
+        loadOptions.Close();
+        setUiColor();
+    }
+
+
+
+    public void setRed(float newValue){
+        uiColor.r = newValue;
+        setUiColor();
+    }
+    public void setGreen(float newValue){
+        uiColor.g = newValue;
+        setUiColor();
+    }
+    public void setBlue(float newValue){
+        uiColor.b = newValue;
+        setUiColor();
+    }
+
+    public void setUiColor(){
+        GetParent().GetNode<Control>("MainMenu").SetModulate(uiColor);
+        saveOptionsData();
     }
 }
