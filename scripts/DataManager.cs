@@ -50,7 +50,7 @@ public class DataManager : Node
     }
 
     public void setUiColor(){
-        GetParent().GetNode<Control>("MainMenu").SetModulate(uiColor);
+        GetParent().GetNode<Control>("GameScene").Modulate = uiColor;
         saveOptionsData();
     }
 }

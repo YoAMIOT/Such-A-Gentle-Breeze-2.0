@@ -49,7 +49,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/4/type = "bezier"
-tracks/4/path = NodePath("MadeByLabel:custom_colors/font_color:a")
+tracks/4/path = NodePath("MadeWithLabel:custom_colors/font_color:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -59,34 +59,34 @@ tracks/4/keys = {
 "times": PoolRealArray( 1.5, 2, 5.5, 6 )
 }
 tracks/5/type = "bezier"
-tracks/5/path = NodePath("MadeWithLabel:custom_colors/font_color:a")
+tracks/5/path = NodePath("GodotLogo:modulate:a")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 1.5, 2, 5.5, 6 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 2.2, 5.5, 6 )
 }
 tracks/6/type = "bezier"
-tracks/6/path = NodePath("GodotLogo:modulate:a")
+tracks/6/path = NodePath("OSLabel:custom_colors/font_color:a")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 2, 2.2, 5.5, 6 )
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5.5, 6 )
 }
 tracks/7/type = "bezier"
-tracks/7/path = NodePath("OSLabel:custom_colors/font_color:a")
+tracks/7/path = NodePath("MadeByLabel:modulate:a")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 5.5, 6 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.5, 2, 5.5, 6 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -181,6 +181,16 @@ tracks/8/keys = {
 "points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("MadeByLabel:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [node name="BootScreen" type="Control"]
 anchor_right = 1.0
@@ -214,6 +224,7 @@ __meta__ = {
 }
 
 [node name="MadeByLabel" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.829
 anchor_top = 0.948
 anchor_right = 0.996
@@ -223,7 +234,6 @@ margin_top = 0.159912
 margin_right = 0.679932
 margin_bottom = 0.519897
 rect_pivot_offset = Vector2( 128, 13 )
-custom_colors/font_color = Color( 0.184314, 0.878431, 0.0862745, 0 )
 custom_fonts/font = ExtResource( 3 )
 text = "Made by: Yoann AMIOT"
 __meta__ = {
@@ -245,7 +255,7 @@ margin_top = 0.159912
 margin_right = -50.3601
 margin_bottom = 0.519897
 rect_pivot_offset = Vector2( 128, 13 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0 )
 custom_fonts/font = ExtResource( 3 )
 text = "Made with: Godot Engine 3.4"
 __meta__ = {
@@ -254,5 +264,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "LogoPop"
+reset_on_save = false
 anims/LogoPop = SubResource( 1 )
 anims/RESET = SubResource( 2 )
