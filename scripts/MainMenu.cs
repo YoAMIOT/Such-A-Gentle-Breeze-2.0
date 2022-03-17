@@ -79,19 +79,19 @@ public class MainMenu : Control
         DataManager.setRed(value);
         float multiplied = value * 255;
         int casted = (int)multiplied;
-        redCount.Text = casted.ToString();
+        GetNode<Label>("OptionsMenu/ColorPicker/RedCount").Text = casted.ToString();
     }
     void greenValueChanged(float value){
         DataManager.setGreen(value);
         float multiplied = value * 255;
         int casted = (int)multiplied;
-        greenCount.Text = casted.ToString();
+        GetNode<Label>("OptionsMenu/ColorPicker/GreenCount").Text = casted.ToString();
     }
     void blueValueChanged(float value){
         DataManager.setBlue(value);
         float multiplied = value * 255;
         int casted = (int)multiplied;
-        blueCount.Text = casted.ToString();
+        GetNode<Label>("OptionsMenu/ColorPicker/BlueCount").Text = casted.ToString();
     }
     void backBtn_pressed(){
         optionsMenu.SetVisible(!optionsMenu.IsVisible());
