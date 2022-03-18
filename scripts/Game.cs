@@ -1,8 +1,9 @@
 using Godot;
 using System;
 
-public class MainMenu : Control
+public class Game : Control
 {
+    //Nodes declarations
     private Control mainMenu;
     private Button startNewBtn;
     private Button continueBtn;
@@ -17,7 +18,11 @@ public class MainMenu : Control
     private Label blueCount;
     private Button backBtn;
     private DataManager DataManager;
+    private Control menuContainer;
+    
+    //Node Paths declaration
     private string dataManagerPath = "/root/DataManager";
+    private string menuContainerPath = "MenuContainer";
     private string mainMenuPath = "MenuContainer/MainMenu";
     private string optionsMenuPath = "MenuContainer/OptionsMenu";
     private string startNewBtnPath = "/StartNewBtn";
@@ -25,11 +30,16 @@ public class MainMenu : Control
     private string optionsBtnPath = "/OptionsBtn";
     private string quitBtnPath = "/QuitBtn";
     private string backBtnPath = "/BackBtn";
+    private string colorPickerPath = "/ColorPicker";
+
+    //Scene declaration
+    private PackedScene TextGameplayScene;
 
 
 
     //Ready Function
     public override void _Ready(){
+        //Associating node declarations to their instances
         DataManager = GetNode<DataManager>(dataManagerPath);
         mainMenu = GetNode<Control>(mainMenuPath);
         startNewBtn = GetNode<Button>(mainMenuPath + startNewBtnPath);
@@ -38,41 +48,50 @@ public class MainMenu : Control
         quitBtn = GetNode<Button>(mainMenuPath + quitBtnPath);
         optionsMenu = GetNode<Control>(optionsMenuPath);
         backBtn = GetNode<Button>(optionsMenuPath + backBtnPath);
+        menuContainer = GetNode<Control>(menuContainerPath);
+        redSlider = GetNode<HSlider>(optionsMenuPath + colorPickerPath + "/RedSlider");
+        redCount = GetNode<Label>(optionsMenuPath + colorPickerPath + "/RedCount");
+        greenSlider = GetNode<HSlider>(optionsMenuPath + colorPickerPath + "/GreenSlider");
+        greenCount = GetNode<Label>(optionsMenuPath + colorPickerPath + "/GreenCount");
+        blueSlider = GetNode<HSlider>(optionsMenuPath + colorPickerPath + "/BlueSlider");
+        blueCount = GetNode<Label>(optionsMenuPath + colorPickerPath + "/BlueCount");
 
+        //Loading the text gameplay scene
+        TextGameplayScene = ResourceLoader.Load<PackedScene>("res://scenes/TextScene.tscn");
+
+        //Connecting signals
         startNewBtn.Connect("pressed", this, "startNewBtn_pressed");
         continueBtn.Connect("pressed", this, "continueBtn_pressed");
         optionsBtn.Connect("pressed", this, "optionsBtn_pressed");
         quitBtn.Connect("pressed", this, "quitBtn_pressed");
         backBtn.Connect("pressed", this, "backBtn_pressed");
-       
-        redSlider = GetNode<HSlider>(optionsMenuPath +"/ColorPicker/RedSlider");
         redSlider.Connect("value_changed", this, "redValueChanged");
-        redSlider.Value = DataManager.uiColor.r;
-        redCount = GetNode<Label>(optionsMenuPath + "/ColorPicker/RedCount");
-        float redMultiplied = DataManager.uiColor.r * 255.0F;
-        int redCasted = (int)redMultiplied;
-        redCount.Text = redCasted.ToString();
-
-        greenSlider = GetNode<HSlider>(optionsMenuPath + "/ColorPicker/GreenSlider");
         greenSlider.Connect("value_changed", this, "greenValueChanged");
-        greenSlider.Value = DataManager.uiColor.g;
-        greenCount = GetNode<Label>(optionsMenuPath + "/ColorPicker/GreenCount");
-        float greenMultiplied = DataManager.uiColor.g * 255.0F;
-        int greenCasted = (int)greenMultiplied;
-        greenCount.Text = greenCasted.ToString();
-
-        blueSlider = GetNode<HSlider>(optionsMenuPath + "/ColorPicker/BlueSlider");
         blueSlider.Connect("value_changed", this, "blueValueChanged");
+       
+       //Get the ui color from the data manager 
+        redSlider.Value = DataManager.uiColor.r;
+        greenSlider.Value = DataManager.uiColor.g;
         blueSlider.Value = DataManager.uiColor.b;
-        blueCount = GetNode<Label>(optionsMenuPath + "/ColorPicker/BlueCount");
-        float blueMultiplied = DataManager.uiColor.b * 255.0F;
+        //Multiply it by 255
+        float redMultiplied = DataManager.uiColor.r * 255;
+        float greenMultiplied = DataManager.uiColor.g * 255;
+        float blueMultiplied = DataManager.uiColor.b * 255;
+        //Cast it to int
+        int redCasted = (int)redMultiplied;
+        int greenCasted = (int)greenMultiplied;
         int blueCasted = (int)blueMultiplied;
+        //Set the text of the options menu
+        redCount.Text = redCasted.ToString();
+        greenCount.Text = greenCasted.ToString();
         blueCount.Text = blueCasted.ToString();
     }
 
     //Pressed Button Functions
     void startNewBtn_pressed(){
-        GD.Print("StartNewPressed");
+        Control MainTextScene = (Control)TextGameplayScene.Instance();
+        AddChild(MainTextScene);
+        menuContainer.QueueFree();
     }
      void continueBtn_pressed(){
         GD.Print("ContinuePressed");

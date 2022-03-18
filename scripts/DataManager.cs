@@ -3,8 +3,10 @@ using System;
 
 public class DataManager : Node
 {
-    private string optionsFile = "user://saveOptions.save";
+    private string optionsFilePath = "user://saveOptions.save";
+    private string textFileFrPath = "res://ressources/JSON/TextFR.json";
     public Color uiColor;
+    public JSONParseResult jsonText;
 
 
 
@@ -12,26 +14,39 @@ public class DataManager : Node
     public override void _Ready()
     {
         loadOptionsData();
+        loadTextFromJson();
     }
 
 
 
     //Save Options
     public void saveOptionsData(){
-        File saveOptions = new File();
-        saveOptions.Open(optionsFile, File.ModeFlags.Write);
-            saveOptions.StoreVar(uiColor);
-        saveOptions.Close();
+        File optionsFile = new File();
+        optionsFile.Open(optionsFilePath, File.ModeFlags.Write);
+            optionsFile.StoreVar(uiColor);
+        optionsFile.Close();
     }
     //Load Options
     public void loadOptionsData(){
-        File loadOptions = new File();
-        if(loadOptions.FileExists(optionsFile)){
-            loadOptions.Open(optionsFile, File.ModeFlags.Read);
-            uiColor = (Color)loadOptions.GetVar();
+        File optionsFile = new File();
+        if(optionsFile.FileExists(optionsFilePath)){
+            optionsFile.Open(optionsFilePath, File.ModeFlags.Read);
+            uiColor = (Color)optionsFile.GetVar();
         }
-        loadOptions.Close();
+        optionsFile.Close();
         setUiColor();
+    }
+
+    //Load Text
+    public void loadTextFromJson(){
+        File textFile = new File();
+        textFile.Open(textFileFrPath, File.ModeFlags.Read);
+        string txt = textFile.GetAsText();
+        jsonText = JSON.Parse(txt);
+        textFile.Close();
+        GD.Print(jsonText.Result);
+        
+
     }
 
 

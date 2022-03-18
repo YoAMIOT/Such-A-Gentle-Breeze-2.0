@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/TextScene.cs" type="Script" id=2]
+
+[node name="TextScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.067
+anchor_top = 0.119
+anchor_right = 0.933
+anchor_bottom = 0.77
+margin_left = -0.639999
+margin_top = -0.520004
+margin_right = 0.639893
+margin_bottom = 0.399963
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Bonjour j'aime l'humour, j'apprécie quand il est lourd!
+Bonjour j'aime les blagues, très très nul et pas banale!"
+text = "Bonjour j'aime l'humour, j'apprécie quand il est lourd!
+Bonjour j'aime les blagues, très très nul et pas banale!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
