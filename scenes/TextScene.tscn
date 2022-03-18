@@ -22,10 +22,6 @@ margin_right = 0.639893
 margin_bottom = 0.399963
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
-bbcode_text = "Bonjour j'aime l'humour, j'apprécie quand il est lourd!
-Bonjour j'aime les blagues, très très nul et pas banale!"
-text = "Bonjour j'aime l'humour, j'apprécie quand il est lourd!
-Bonjour j'aime les blagues, très très nul et pas banale!"
 __meta__ = {
 "_edit_use_anchors_": false
 }

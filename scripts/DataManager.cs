@@ -6,7 +6,7 @@ public class DataManager : Node
     private string optionsFilePath = "user://saveOptions.save";
     private string textFileFrPath = "res://ressources/JSON/TextFR.json";
     public Color uiColor;
-    public JSONParseResult jsonText;
+    public Godot.Collections.Dictionary textDictionary;
 
 
 
@@ -41,12 +41,14 @@ public class DataManager : Node
     public void loadTextFromJson(){
         File textFile = new File();
         textFile.Open(textFileFrPath, File.ModeFlags.Read);
-        string txt = textFile.GetAsText();
-        jsonText = JSON.Parse(txt);
+        string jsonTxt = textFile.GetAsText();
+        textDictionary = (Godot.Collections.Dictionary)JSON.Parse(jsonTxt).Result;
         textFile.Close();
-        GD.Print(jsonText.Result);
-        
+    }
 
+    public Godot.Collections.Array loadSceneTextFromDictionary(string sceneRef){
+        Godot.Collections.Array sceneTextArray = (Godot.Collections.Array)textDictionary[sceneRef];
+        return sceneTextArray;
     }
 
 

@@ -1,6 +1,12 @@
 {
-    "SceneText1":{
-        "page1":"Page 1",
-        "page2":"Page deux"
-    }
+    "SceneText1":
+    [
+        "Page une, c'est boooooooo",
+        "Page deux c'est pas aussi boooo"
+    ],
+    "SceneText2":
+    [
+        "Page une, c'est encore moins bo",
+        "Page deux c'est carrément pourave"
+    ]
 }
