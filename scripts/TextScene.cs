@@ -3,18 +3,24 @@ using System;
 
 public class TextScene : Control
 {
-    private string sceneString = "SceneText";
-    private int sceneNumber = 1;
     public string currentScene;
-    private Godot.Collections.Array currentSceneTextArray;
+    private int page = 0;
+    private Godot.Collections.Array currentSceneText;
+    private Godot.Collections.Dictionary currentSceneData;
     private DataManager DataManager;
+
 
 
     public override void _Ready(){
         DataManager = GetNode<DataManager>("/root/DataManager");
+
+        if(DataManager.currentScene != ""){
+            currentScene = DataManager.currentScene;
+            currentSceneData = DataManager.getSceneDatas(currentScene);
+        }
     }
 
     private void getCurrentSceneTextArray(){
-        currentSceneTextArray = DataManager.loadSceneTextFromDictionary(currentScene);
+        currentSceneText = DataManager.loadTextFromJson(currentScene);
     }
 }

@@ -89,12 +89,16 @@ public class Game : Control
 
     //Pressed Button Functions
     void startNewBtn_pressed(){
+        DataManager.currentScene = "";
         Control MainTextScene = (Control)TextGameplayScene.Instance();
         AddChild(MainTextScene);
         menuContainer.QueueFree();
     }
      void continueBtn_pressed(){
-        GD.Print("ContinuePressed");
+        DataManager.loadUserData();
+        Control MainTextScene = (Control)TextGameplayScene.Instance();
+        AddChild(MainTextScene);
+        menuContainer.QueueFree();
     }
      void optionsBtn_pressed(){
         mainMenu.Visible = !mainMenu.Visible;
