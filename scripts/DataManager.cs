@@ -6,7 +6,6 @@ public class DataManager : Node
     private string optionsFilePath = "user://saveOptions.save";
     private string saveFilePath = "user://saveUserData.save";
     private string textFileFrPath = "res://ressources/JSON/TextFR.json";
-    private string dataFilePath = "res://ressources/JSON/sceneRepertory.json";
     public Color uiColor;
     public string currentScene = "";
     public Godot.Collections.Dictionary textDictionary;
@@ -56,25 +55,14 @@ public class DataManager : Node
         }
     }
 
-    //Load Text
-    public Godot.Collections.Array loadTextFromJson(string sceneRef){
-        File textFile = new File();
-        textFile.Open(textFileFrPath, File.ModeFlags.Read);
-        string jsonTxt = textFile.GetAsText();
-        Godot.Collections.Dictionary textDict = (Godot.Collections.Dictionary)JSON.Parse(jsonTxt).Result;
-        textFile.Close();
-        Godot.Collections.Array sceneTextArray = (Godot.Collections.Array)textDict[sceneRef];
-        return sceneTextArray;
-    }
-    //Load Scene Datas
-    public Godot.Collections.Dictionary getSceneDatas(string sceneRef){
-        File dataFile = new File();
-        dataFile.Open(dataFilePath, File.ModeFlags.Read);
-        string jsonTxt = dataFile.GetAsText();
-        Godot.Collections.Dictionary dataDict = (Godot.Collections.Dictionary)JSON.Parse(jsonTxt).Result;
-        dataFile.Close();
-        Godot.Collections.Dictionary sceneDatas = (Godot.Collections.Dictionary)dataDict[sceneRef];
-        return sceneDatas;
+    //Load Scene from json
+    public Godot.Collections.Dictionary loadSceneFromJson(string sceneRef){
+        File sceneFile = new File();
+        sceneFile.Open(textFileFrPath, File.ModeFlags.Read);
+        string jsonTxt = sceneFile.GetAsText();
+        Godot.Collections.Dictionary jsonDict = (Godot.Collections.Dictionary)JSON.Parse(jsonTxt).Result;
+        sceneFile.Close();
+        return (Godot.Collections.Dictionary)jsonDict[sceneRef];
     }
 
 

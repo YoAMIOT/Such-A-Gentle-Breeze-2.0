@@ -25,3 +25,7 @@ bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TypingTimer" type="Timer" parent="."]
+wait_time = 0.001
+autostart = true
