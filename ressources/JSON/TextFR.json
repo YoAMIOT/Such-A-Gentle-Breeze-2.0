@@ -2,14 +2,27 @@
     "1-1":
     {
         "text": ["Page une, c'est boooooooo","Page deux c'est pas aussi boooo"],
-        "choiceA": "1-2",
-        "choiceB": "2-1"
+        "choiceARef": "1-2",
+        "choiceBRef": "2-1",
+        "choiceATxt": "1-2",
+        "choiceBTxt": "2-1"
     },
     
     "1-2":
     {
-        "text": ["Page une, c'est encore moins bo","Page deux c'est carrément pourave"],
-        "choiceA": "1-3",
-        "choiceB": "1-4"
+        "text": ["1-2 Page une, c'est encore moins bo","1-2 Page deux c'est carrément pourave"],
+        "choiceARef": "2-1",
+        "choiceBRef": "2-1",
+        "choiceATxt": "2-1",
+        "choiceBTxt": "2-1"
+    },
+
+    "2-1":
+    {
+        "text": ["2-1 Page une, c'est encore moins bo","2-1 Page deux c'est carrément pourave"],
+        "choiceARef": "1-1",
+        "choiceBRef": "1-2",
+        "choiceATxt": "1-1",
+        "choiceBTxt": "1-2"
     }
 }

@@ -3,13 +3,21 @@ using System;
 
 public class TextScene : Control
 {
+    //Scene nodes
     private DataManager DataManager;
     private RichTextLabel RTL;
+    private Control Buttons;
+    private Button ChoiceABtn;
+    private Button ChoiceBBtn;
     private Timer TypingTimer;
+
+    //Variables
     private Godot.Collections.Dictionary currentSceneData;
     private Godot.Collections.Array currentSceneText;
     private string choiceASceneRef;
     private string choiceBSceneRef;
+    private string choiceATxt;
+    private string choiceBTxt;
     private int page = 0;
 
 
@@ -17,10 +25,12 @@ public class TextScene : Control
     public override void _Ready(){
         DataManager = GetNode<DataManager>("/root/DataManager");
         RTL = GetNode<RichTextLabel>("RichTextLabel");
+        Buttons = GetNode<Control>("Buttons");
+        ChoiceABtn = GetNode<Button>("Buttons/ChoiceABtn");
+        ChoiceBBtn = GetNode<Button>("Buttons/ChoiceBBtn");
         TypingTimer = GetNode<Timer>("TypingTimer");
 
         if(DataManager.currentScene != ""){
-            GD.Print("else");
             gatherAllSceneDatas(DataManager.currentScene);
         }
         else if(DataManager.currentScene == ""){
@@ -30,7 +40,11 @@ public class TextScene : Control
 
         RTL.BbcodeText = ((string)currentSceneText[page]);
         RTL.VisibleCharacters = 0;
+        ChoiceABtn.Text = choiceATxt;
+        ChoiceBBtn.Text = choiceBTxt;
 
+        ChoiceABtn.Connect("pressed", this, "choiceAPressed");
+        ChoiceBBtn.Connect("pressed", this, "choiceBPressed");
         TypingTimer.Connect("timeout", this, "typingTimerTimeout");
     }
 
@@ -46,8 +60,8 @@ public class TextScene : Control
                     RTL.VisibleCharacters = 0;
                     TypingTimer.Paused = false;
                 }
-                else if(page == currentSceneText.Count){
-                    GD.Print("page writing done");
+                else if(page == currentSceneText.Count - 1){
+                    Buttons.Visible = true;
                 }
             }
             //Show all the characters
@@ -56,6 +70,33 @@ public class TextScene : Control
                 TypingTimer.Paused = true;
             }
         }
+    }
+
+
+
+    //ButtonPressed
+    private void choiceAPressed(){
+        DataManager.currentScene = choiceASceneRef;
+        gatherAllSceneDatas(choiceASceneRef);
+        resetRTL();
+    }
+    private void choiceBPressed(){
+        DataManager.currentScene = choiceBSceneRef;
+        gatherAllSceneDatas(choiceBSceneRef);
+        resetRTL();
+    }
+
+
+
+    //Reset the scene with new parameters
+    private void resetRTL(){
+        page = 0;
+        RTL.BbcodeText = ((string)currentSceneText[page]);
+        RTL.VisibleCharacters = 0;
+        TypingTimer.Paused = false;
+        Buttons.Visible = false;
+        ChoiceABtn.Text = choiceATxt;
+        ChoiceBBtn.Text = choiceBTxt;
     }
 
 
@@ -80,7 +121,9 @@ public class TextScene : Control
     private void gatherAllSceneDatas(string sceneRef){
         currentSceneData = DataManager.loadSceneFromJson(sceneRef);
         currentSceneText = (Godot.Collections.Array)currentSceneData["text"];
-        choiceASceneRef = (string)currentSceneData["choiceA"];
-        choiceBSceneRef = (string)currentSceneData["choiceB"];
+        choiceASceneRef = (string)currentSceneData["choiceARef"];
+        choiceBSceneRef = (string)currentSceneData["choiceBRef"];
+        choiceATxt = (string)currentSceneData["choiceATxt"];
+        choiceBTxt = (string)currentSceneData["choiceBTxt"];
     }
 }
