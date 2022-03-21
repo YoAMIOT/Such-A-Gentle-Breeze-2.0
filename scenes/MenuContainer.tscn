@@ -37,7 +37,7 @@ custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 3 )
 custom_styles/normal = ExtResource( 2 )
-text = "Start new story"
+text = "Commencer un nouveau récit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -58,7 +58,7 @@ custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 3 )
 custom_styles/normal = ExtResource( 2 )
-text = "Continue story"
+text = "Continuer votre récit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -101,7 +101,7 @@ custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 3 )
 custom_styles/normal = ExtResource( 2 )
-text = "Quit Game"
+text = "Quitter le terminal"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -136,24 +136,24 @@ custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/focus = ExtResource( 3 )
 custom_styles/normal = ExtResource( 2 )
-text = "Back"
+text = "Retour"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="UiColorLabel" type="Label" parent="OptionsMenu"]
-anchor_left = 0.437
+anchor_left = 0.343
 anchor_top = 0.269
-anchor_right = 0.564
+anchor_right = 0.657
 anchor_bottom = 0.335
-margin_left = 0.959961
-margin_top = -0.52002
-margin_right = -121.88
+margin_left = 0.439941
+margin_top = -0.52005
+margin_right = -301.44
 margin_bottom = -35.8
 rect_scale = Vector2( 2, 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 5 )
-text = "UI Color:"
+text = "Couleur de l'interface"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -168,17 +168,17 @@ __meta__ = {
 }
 
 [node name="RedLabel" type="Label" parent="OptionsMenu/ColorPicker"]
-anchor_left = 0.487
-anchor_top = 0.356
-anchor_right = 0.513
-anchor_bottom = 0.389
-margin_left = -0.0400391
-margin_top = 34.52
-margin_right = 0.039978
-margin_bottom = 34.88
+anchor_left = 0.479
+anchor_top = 0.388
+anchor_right = 0.521
+anchor_bottom = 0.421
+margin_left = -0.680054
+margin_top = -0.0400085
+margin_right = 0.679932
+margin_bottom = 0.319977
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 5 )
-text = "Red"
+text = "Rouge"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -216,16 +216,16 @@ __meta__ = {
 
 [node name="GreenLabel" type="Label" parent="OptionsMenu/ColorPicker"]
 anchor_left = 0.48
-anchor_top = 0.415
+anchor_top = 0.447
 anchor_right = 0.521
-anchor_bottom = 0.448
-margin_left = -0.600037
-margin_top = 34.8
+anchor_bottom = 0.481
+margin_left = -0.600098
+margin_top = 0.239929
 margin_right = -0.320068
-margin_bottom = 35.16
+margin_bottom = -0.480042
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 5 )
-text = "Green"
+text = "Vert"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -260,16 +260,16 @@ text = "255"
 
 [node name="BlueLabel" type="Label" parent="OptionsMenu/ColorPicker"]
 anchor_left = 0.484
-anchor_top = 0.474
+anchor_top = 0.506
 anchor_right = 0.517
-anchor_bottom = 0.507
-margin_left = -0.280029
-margin_top = 35.08
+anchor_bottom = 0.54
+margin_left = -0.28009
+margin_top = 0.519958
 margin_right = -0.640015
-margin_bottom = 35.4399
+margin_bottom = -0.200073
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 5 )
-text = "Blue"
+text = "Bleu"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
