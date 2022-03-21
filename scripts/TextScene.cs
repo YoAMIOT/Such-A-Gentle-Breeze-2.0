@@ -9,7 +9,6 @@ public class TextScene : Control
     private Control Buttons;
     private Button ChoiceABtn;
     private Button ChoiceBBtn;
-    private Timer TypingTimer;
 
     //Variables
     private Godot.Collections.Dictionary currentSceneData;
@@ -19,6 +18,7 @@ public class TextScene : Control
     private string choiceATxt;
     private string choiceBTxt;
     private int page = 0;
+    private bool writing;
 
 
     //Ready Function
@@ -28,7 +28,7 @@ public class TextScene : Control
         Buttons = GetNode<Control>("Buttons");
         ChoiceABtn = GetNode<Button>("Buttons/ChoiceABtn");
         ChoiceBBtn = GetNode<Button>("Buttons/ChoiceBBtn");
-        TypingTimer = GetNode<Timer>("TypingTimer");
+        writing = true;
 
         if(DataManager.currentScene != ""){
             gatherAllSceneDatas(DataManager.currentScene);
@@ -45,7 +45,6 @@ public class TextScene : Control
 
         ChoiceABtn.Connect("pressed", this, "choiceAPressed");
         ChoiceBBtn.Connect("pressed", this, "choiceBPressed");
-        TypingTimer.Connect("timeout", this, "typingTimerTimeout");
     }
 
 
@@ -58,7 +57,7 @@ public class TextScene : Control
                     page += 1;
                     RTL.BbcodeText = (string)currentSceneText[page];
                     RTL.VisibleCharacters = 0;
-                    TypingTimer.Paused = false;
+                    writing = true;
                 }
                 else if(page == currentSceneText.Count - 1){
                     Buttons.Visible = true;
@@ -67,7 +66,26 @@ public class TextScene : Control
             //Show all the characters
             else {
                 RTL.VisibleCharacters = RTL.GetTotalCharacterCount();
-                TypingTimer.Paused = true;
+                writing = false;
+            }
+        }
+    }
+
+
+
+    //Process function
+    public override void _Process(float delta)
+    {
+        if(writing == true){
+            if(RTL.VisibleCharacters < RTL.GetTotalCharacterCount()){
+                RTL.VisibleCharacters = RTL.VisibleCharacters + 1;
+            }
+            else if(RTL.VisibleCharacters > RTL.GetTotalCharacterCount()){
+                RTL.VisibleCharacters = RTL.GetTotalCharacterCount();
+            }
+
+            if(RTL.VisibleCharacters == RTL.GetTotalCharacterCount()){
+                writing = false;
             }
         }
     }
@@ -93,26 +111,11 @@ public class TextScene : Control
         page = 0;
         RTL.BbcodeText = ((string)currentSceneText[page]);
         RTL.VisibleCharacters = 0;
-        TypingTimer.Paused = false;
+        writing = true;
+        //TypingTimer.Paused = false;
         Buttons.Visible = false;
         ChoiceABtn.Text = choiceATxt;
         ChoiceBBtn.Text = choiceBTxt;
-    }
-
-
-
-    //Typing timer timeOut function
-    private void typingTimerTimeout(){
-        if(RTL.VisibleCharacters < RTL.GetTotalCharacterCount()){
-            RTL.VisibleCharacters = RTL.VisibleCharacters + 1;
-        }
-        else if(RTL.VisibleCharacters > RTL.GetTotalCharacterCount()){
-            RTL.VisibleCharacters = RTL.GetTotalCharacterCount();
-        }
-
-        if(RTL.VisibleCharacters == RTL.GetTotalCharacterCount()){
-            TypingTimer.Paused = true;
-        }
     }
 
 
