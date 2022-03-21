@@ -61,11 +61,11 @@ public class Game : Control
             continueBtn.Visible = false;
             Vector2 optionsPos;
             Vector2 quitPos;
-            optionsPos.x = 850.16F;
-            optionsPos.y = 714.72F;
+            optionsPos.x = 908;
+            optionsPos.y = 716;
             optionsBtn.SetPosition(optionsPos);
-            quitPos.x = 825.44F;
-            quitPos.y = 792.72F;
+            quitPos.x = 835;
+            quitPos.y = 793;
             quitBtn.SetPosition(quitPos);
         }
 

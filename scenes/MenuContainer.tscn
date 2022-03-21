@@ -14,7 +14,6 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -22,14 +21,14 @@ __meta__ = {
 }
 
 [node name="StartNewBtn" type="Button" parent="MainMenu"]
-anchor_left = 0.385
-anchor_top = 0.59
-anchor_right = 0.615
-anchor_bottom = 0.661
-margin_left = 0.940125
-margin_top = 0.52002
-margin_right = -0.940186
-margin_bottom = 0.399963
+anchor_left = 0.399
+anchor_top = 0.591
+anchor_right = 0.601
+anchor_bottom = 0.662
+margin_left = -0.0800171
+margin_top = -0.280029
+margin_right = 0.0799561
+margin_bottom = 0.039917
 focus_neighbour_top = NodePath("../QuitBtn")
 focus_neighbour_bottom = NodePath("../ContinueBtn")
 custom_fonts/font = ExtResource( 5 )
@@ -43,14 +42,14 @@ __meta__ = {
 }
 
 [node name="ContinueBtn" type="Button" parent="MainMenu"]
-anchor_left = 0.394
+anchor_left = 0.424
 anchor_top = 0.663
-anchor_right = 0.606
+anchor_right = 0.576
 anchor_bottom = 0.734
-margin_left = -0.380066
-margin_top = -0.320007
-margin_right = 0.380005
-margin_bottom = -0.440063
+margin_left = -0.0800781
+margin_top = -0.0400391
+margin_right = -0.920044
+margin_bottom = 0.279968
 focus_neighbour_top = NodePath("../StartNewBtn")
 focus_neighbour_bottom = NodePath("../OptionsBtn")
 custom_fonts/font = ExtResource( 5 )
@@ -64,14 +63,14 @@ __meta__ = {
 }
 
 [node name="OptionsBtn" type="Button" parent="MainMenu"]
-anchor_left = 0.443
+anchor_left = 0.473
 anchor_top = 0.734
-anchor_right = 0.557
-anchor_bottom = 0.805
-margin_left = -0.400024
-margin_top = -6.10352e-05
-margin_right = 0.399902
-margin_bottom = -0.120056
+anchor_right = 0.528
+anchor_bottom = 0.806
+margin_left = -0.160034
+margin_top = 0.279968
+margin_right = -0.76001
+margin_bottom = -0.480042
 focus_neighbour_top = NodePath("../ContinueBtn")
 focus_neighbour_bottom = NodePath("../QuitBtn")
 custom_fonts/font = ExtResource( 5 )
@@ -86,14 +85,14 @@ __meta__ = {
 
 [node name="QuitBtn" type="Button" parent="MainMenu"]
 show_behind_parent = true
-anchor_left = 0.43
-anchor_top = 0.805
-anchor_right = 0.57
-anchor_bottom = 0.876
-margin_left = -0.160034
-margin_top = 0.319946
-margin_right = 0.160034
-margin_bottom = 0.200012
+anchor_left = 0.435
+anchor_top = 0.806
+anchor_right = 0.565
+anchor_bottom = 0.877
+margin_left = -0.200073
+margin_top = -0.480042
+margin_right = 0.199951
+margin_bottom = -0.160034
 focus_neighbour_top = NodePath("../OptionsBtn")
 focus_neighbour_bottom = NodePath("../StartNewBtn")
 custom_fonts/font = ExtResource( 5 )
