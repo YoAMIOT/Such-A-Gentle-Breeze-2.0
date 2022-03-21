@@ -20,7 +20,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-DataManager="*res://scripts/DataManager.cs"
+DataManager="*res://scripts/singletons/DataManager.cs"
+SoundManager="*res://scenes/singletons/SoundManager.tscn"
 
 [display]
 

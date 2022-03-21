@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/TextScene.cs" type="Script" id=2]
-[ext_resource path="res://ressources/buttonStyleBoxes/Pressed.tres" type="StyleBox" id=3]
-[ext_resource path="res://ressources/buttonStyleBoxes/Normal.tres" type="StyleBox" id=4]
-[ext_resource path="res://ressources/buttonStyleBoxes/Hover.tres" type="StyleBox" id=5]
+[ext_resource path="res://ressources/styleBoxes/Pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://ressources/styleBoxes/Normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://ressources/styleBoxes/Hover.tres" type="StyleBox" id=5]
+[ext_resource path="res://ressources/styleBoxes/RichTextLabel.tres" type="StyleBox" id=6]
 
 [node name="TextScene" type="Control"]
 anchor_right = 1.0
@@ -24,6 +25,7 @@ margin_top = -0.520004
 margin_right = 0.639893
 margin_bottom = 0.399963
 custom_fonts/normal_font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
 bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false

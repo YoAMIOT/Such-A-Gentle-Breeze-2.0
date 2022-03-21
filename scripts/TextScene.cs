@@ -5,6 +5,7 @@ public class TextScene : Control
 {
     //Scene nodes
     private DataManager DataManager;
+    private SoundManager SoundManager;
     private RichTextLabel RTL;
     private Control Buttons;
     private Button ChoiceABtn;
@@ -24,6 +25,7 @@ public class TextScene : Control
     //Ready Function
     public override void _Ready(){
         DataManager = GetNode<DataManager>("/root/DataManager");
+        SoundManager = GetNode<SoundManager>("/root/SoundManager");
         RTL = GetNode<RichTextLabel>("RichTextLabel");
         Buttons = GetNode<Control>("Buttons");
         ChoiceABtn = GetNode<Button>("Buttons/ChoiceABtn");
@@ -97,11 +99,13 @@ public class TextScene : Control
         DataManager.currentScene = choiceASceneRef;
         gatherAllSceneDatas(choiceASceneRef);
         resetRTL();
+        SoundManager.playButtonSound();
     }
     private void choiceBPressed(){
         DataManager.currentScene = choiceBSceneRef;
         gatherAllSceneDatas(choiceBSceneRef);
         resetRTL();
+        SoundManager.playButtonSound();
     }
 
 

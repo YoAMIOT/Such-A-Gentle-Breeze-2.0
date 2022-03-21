@@ -18,6 +18,7 @@ public class Game : Control
     private Label blueCount;
     private Button backBtn;
     private DataManager DataManager;
+    private SoundManager SoundManager;
     private Control menuContainer;
     //Scene declaration
     private PackedScene TextGameplayScene;
@@ -28,6 +29,7 @@ public class Game : Control
     public override void _Ready(){
         //Associating node declarations to their instances
         DataManager = GetNode<DataManager>("/root/DataManager");
+        SoundManager = GetNode<SoundManager>("/root/SoundManager");
         mainMenu = GetNode<Control>("MenuContainer/MainMenu");
         startNewBtn = GetNode<Button>("MenuContainer/MainMenu/StartNewBtn");
         continueBtn = GetNode<Button>("MenuContainer/MainMenu/ContinueBtn");
@@ -90,46 +92,50 @@ public class Game : Control
 
 
     //Pressed button functions
-    void startNewBtn_pressed(){
+    private void startNewBtn_pressed(){
         DataManager.currentScene = "";
         Control MainTextScene = (Control)TextGameplayScene.Instance();
         AddChild(MainTextScene);
         menuContainer.QueueFree();
+        SoundManager.playButtonSound();
     }
-    void continueBtn_pressed(){
+    private void continueBtn_pressed(){
         DataManager.loadUserData();
         Control MainTextScene = (Control)TextGameplayScene.Instance();
         AddChild(MainTextScene);
         menuContainer.QueueFree();
+        SoundManager.playButtonSound();
     }
-    void optionsBtn_pressed(){
+    private void optionsBtn_pressed(){
         mainMenu.Visible = !mainMenu.Visible;
         optionsMenu.Visible= !optionsMenu.Visible;
+        SoundManager.playButtonSound();
     }
-    void quitBtn_pressed(){
+    private void quitBtn_pressed(){
         GetTree().Quit();
     }
     //Options menu funtions
-    void redValueChanged(float value){
+    private void redValueChanged(float value){
         DataManager.setRed(value);
         float multiplied = value * 255;
         int casted = (int)multiplied;
         GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/RedCount").Text = casted.ToString();
     }
-    void greenValueChanged(float value){
+    private void greenValueChanged(float value){
         DataManager.setGreen(value);
         float multiplied = value * 255;
         int casted = (int)multiplied;
         GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/GreenCount").Text = casted.ToString();
     }
-    void blueValueChanged(float value){
+    private void blueValueChanged(float value){
         DataManager.setBlue(value);
         float multiplied = value * 255;
         int casted = (int)multiplied;
         GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/BlueCount").Text = casted.ToString();
     }
-    void backBtn_pressed(){
+    private void backBtn_pressed(){
         optionsMenu.Visible= !optionsMenu.Visible;
         mainMenu.Visible = !mainMenu.Visible;
+        SoundManager.playButtonSound();
     }
 }

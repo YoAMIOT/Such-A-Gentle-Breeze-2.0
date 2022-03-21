@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ressources/img/Logo.png" type="Texture" id=1]
-[ext_resource path="res://ressources/buttonStyleBoxes/Normal.tres" type="StyleBox" id=2]
-[ext_resource path="res://ressources/buttonStyleBoxes/Hover.tres" type="StyleBox" id=3]
-[ext_resource path="res://ressources/buttonStyleBoxes/Pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://ressources/styleBoxes/Normal.tres" type="StyleBox" id=2]
+[ext_resource path="res://ressources/styleBoxes/Hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://ressources/styleBoxes/Pressed.tres" type="StyleBox" id=4]
 [ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=5]
 
 [node name="MenuContainer" type="Control"]
@@ -27,9 +27,9 @@ anchor_top = 0.591
 anchor_right = 0.601
 anchor_bottom = 0.662
 margin_left = -0.0800171
-margin_top = -0.280029
+margin_top = 0.719971
 margin_right = 0.0799561
-margin_bottom = 0.039917
+margin_bottom = 1.03992
 focus_neighbour_top = NodePath("../QuitBtn")
 focus_neighbour_bottom = NodePath("../ContinueBtn")
 custom_fonts/font = ExtResource( 5 )
