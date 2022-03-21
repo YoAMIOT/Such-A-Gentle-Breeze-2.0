@@ -44,10 +44,19 @@ public class DataManager : Node
         saveFile.StoreVar(currentScene);
         saveFile.Close();
     }
+    //Check if User has ever played the game
+    public bool userDataExists(){
+        bool saveFileExists = false;
+        File saveFile = new File();
+        if(saveFile.FileExists(saveFilePath)){
+            saveFileExists = true;
+        }
+        return saveFileExists;
+    }
     //Load UserData
     public void loadUserData(){
         File saveFile = new File();
-        if(saveFile.FileExists(saveFilePath)){
+        if(userDataExists() == true){
             saveFile.Open(saveFilePath, File.ModeFlags.Read);
             currentScene = (String)saveFile.GetVar();
             saveFile.Close();

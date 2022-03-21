@@ -19,42 +19,29 @@ public class Game : Control
     private Button backBtn;
     private DataManager DataManager;
     private Control menuContainer;
-    
-    //Node Paths declaration
-    private string dataManagerPath = "/root/DataManager";
-    private string menuContainerPath = "MenuContainer";
-    private string mainMenuPath = "MenuContainer/MainMenu";
-    private string optionsMenuPath = "MenuContainer/OptionsMenu";
-    private string startNewBtnPath = "/StartNewBtn";
-    private string continueBtnPath = "/ContinueBtn";
-    private string optionsBtnPath = "/OptionsBtn";
-    private string quitBtnPath = "/QuitBtn";
-    private string backBtnPath = "/BackBtn";
-    private string colorPickerPath = "/ColorPicker";
-
     //Scene declaration
     private PackedScene TextGameplayScene;
 
 
 
-    //Ready Function
+    //Ready function
     public override void _Ready(){
         //Associating node declarations to their instances
-        DataManager = GetNode<DataManager>(dataManagerPath);
-        mainMenu = GetNode<Control>(mainMenuPath);
-        startNewBtn = GetNode<Button>(mainMenuPath + startNewBtnPath);
-        continueBtn = GetNode<Button>(mainMenuPath + continueBtnPath);
-        optionsBtn = GetNode<Button>(mainMenuPath + optionsBtnPath);
-        quitBtn = GetNode<Button>(mainMenuPath + quitBtnPath);
-        optionsMenu = GetNode<Control>(optionsMenuPath);
-        backBtn = GetNode<Button>(optionsMenuPath + backBtnPath);
-        menuContainer = GetNode<Control>(menuContainerPath);
-        redSlider = GetNode<HSlider>(optionsMenuPath + colorPickerPath + "/RedSlider");
-        redCount = GetNode<Label>(optionsMenuPath + colorPickerPath + "/RedCount");
-        greenSlider = GetNode<HSlider>(optionsMenuPath + colorPickerPath + "/GreenSlider");
-        greenCount = GetNode<Label>(optionsMenuPath + colorPickerPath + "/GreenCount");
-        blueSlider = GetNode<HSlider>(optionsMenuPath + colorPickerPath + "/BlueSlider");
-        blueCount = GetNode<Label>(optionsMenuPath + colorPickerPath + "/BlueCount");
+        DataManager = GetNode<DataManager>("/root/DataManager");
+        mainMenu = GetNode<Control>("MenuContainer/MainMenu");
+        startNewBtn = GetNode<Button>("MenuContainer/MainMenu/StartNewBtn");
+        continueBtn = GetNode<Button>("MenuContainer/MainMenu/ContinueBtn");
+        optionsBtn = GetNode<Button>("MenuContainer/MainMenu/OptionsBtn");
+        quitBtn = GetNode<Button>("MenuContainer/MainMenu/QuitBtn");
+        optionsMenu = GetNode<Control>("MenuContainer/OptionsMenu");
+        backBtn = GetNode<Button>("MenuContainer/OptionsMenu/BackBtn");
+        menuContainer = GetNode<Control>("MenuContainer");
+        redSlider = GetNode<HSlider>("MenuContainer/OptionsMenu/ColorPicker/RedSlider");
+        redCount = GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/RedCount");
+        greenSlider = GetNode<HSlider>("MenuContainer/OptionsMenu/ColorPicker/GreenSlider");
+        greenCount = GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/GreenCount");
+        blueSlider = GetNode<HSlider>("MenuContainer/OptionsMenu/ColorPicker/BlueSlider");
+        blueCount = GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/BlueCount");
 
         //Loading the text gameplay scene
         TextGameplayScene = ResourceLoader.Load<PackedScene>("res://scenes/TextScene.tscn");
@@ -68,8 +55,21 @@ public class Game : Control
         redSlider.Connect("value_changed", this, "redValueChanged");
         greenSlider.Connect("value_changed", this, "greenValueChanged");
         blueSlider.Connect("value_changed", this, "blueValueChanged");
-       
-       //Get the ui color from the data manager 
+
+        //Testing if the user already have a save file
+        if(DataManager.userDataExists() == false){
+            continueBtn.Visible = false;
+            Vector2 optionsPos;
+            Vector2 quitPos;
+            optionsPos.x = 850.16F;
+            optionsPos.y = 714.72F;
+            optionsBtn.SetPosition(optionsPos);
+            quitPos.x = 825.44F;
+            quitPos.y = 792.72F;
+            quitBtn.SetPosition(quitPos);
+        }
+
+        //Get the ui color from the data manager 
         redSlider.Value = DataManager.uiColor.r;
         greenSlider.Value = DataManager.uiColor.g;
         blueSlider.Value = DataManager.uiColor.b;
@@ -87,43 +87,46 @@ public class Game : Control
         blueCount.Text = blueCasted.ToString();
     }
 
-    //Pressed Button Functions
+
+
+    //Pressed button functions
     void startNewBtn_pressed(){
         DataManager.currentScene = "";
         Control MainTextScene = (Control)TextGameplayScene.Instance();
         AddChild(MainTextScene);
         menuContainer.QueueFree();
     }
-     void continueBtn_pressed(){
+    void continueBtn_pressed(){
         DataManager.loadUserData();
         Control MainTextScene = (Control)TextGameplayScene.Instance();
         AddChild(MainTextScene);
         menuContainer.QueueFree();
     }
-     void optionsBtn_pressed(){
+    void optionsBtn_pressed(){
         mainMenu.Visible = !mainMenu.Visible;
         optionsMenu.Visible= !optionsMenu.Visible;
     }
-     void quitBtn_pressed(){
+    void quitBtn_pressed(){
         GetTree().Quit();
     }
+    //Options menu funtions
     void redValueChanged(float value){
         DataManager.setRed(value);
         float multiplied = value * 255;
         int casted = (int)multiplied;
-        GetNode<Label>(optionsMenuPath + "/ColorPicker/RedCount").Text = casted.ToString();
+        GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/RedCount").Text = casted.ToString();
     }
     void greenValueChanged(float value){
         DataManager.setGreen(value);
         float multiplied = value * 255;
         int casted = (int)multiplied;
-        GetNode<Label>(optionsMenuPath + "/ColorPicker/GreenCount").Text = casted.ToString();
+        GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/GreenCount").Text = casted.ToString();
     }
     void blueValueChanged(float value){
         DataManager.setBlue(value);
         float multiplied = value * 255;
         int casted = (int)multiplied;
-        GetNode<Label>(optionsMenuPath + "/ColorPicker/BlueCount").Text = casted.ToString();
+        GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/BlueCount").Text = casted.ToString();
     }
     void backBtn_pressed(){
         optionsMenu.Visible= !optionsMenu.Visible;
