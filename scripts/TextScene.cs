@@ -116,6 +116,7 @@ public class TextScene : Control
         Buttons.Visible = false;
         ChoiceABtn.Text = choiceATxt;
         ChoiceBBtn.Text = choiceBTxt;
+        DataManager.saveUserData();
     }
 
 
