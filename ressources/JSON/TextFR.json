@@ -1,11 +1,18 @@
 {
     "1-1":
     {
-        "text": ["Page une, c'est boooooooo","Page deux c'est pas aussi boooo"],
-        "choiceARef": "1-2",
-        "choiceBRef": "2-1",
-        "choiceATxt": "1-2",
-        "choiceBTxt": "2-1"
+        "text": ["    Ce récit commence à 2110312785s TimeStamp sur l'île de Short Kingdom au large des côtes anglaises. C'est une petite île d'une superficie avoisinant les 500km2. Willow, une jeune fille de 16 ans, vis sur la baie d'Orca qui est de loin la partie la plus préservée de l'île. Les quelques maisons qui tiennent encore debout de çà et là sont dans un sale état, les navires encore arrimés ont pris l’eau il y a des années de cela. Un vent brut et froid s'est installé il y a une quinzaine d'années, amenant aussi une brusque chute des températures. Le monde perdit définitivement une moyenne de 50°C, passant en Europe d'une quarantaine de degrés à -10 en plein été. Le vent s'approche des 90km/h et peut aller facilement au delà des 150km/h!", 
+            "    Willow loge dans la dernière auberge de l'île. C'est une grande jeune fille, les cheveux longs et roux, les yeux bleus très clairs tirant légèrement sur le gris. Vêtue d'un vieux tissu qui lui sert de robe et une paire de bottes noires trop grande auxquelles elle tient particulièrement.",
+            "    Cela fait 5 ans qu'elle vit ici, aidant l'aubergiste afin de le soulager. Tous les jours levée à 5h du matin, se tenant face à la fenêtre de sa petite chambre donnant droit sur la mer. Réitérant les mêmes tâches de manière robotique jour après jour, passer le balai, nettoyer le sol, changer les draps. Ce labeur répétitif ne lui plaît guère.",
+            "    En 5 ans, Willow a bien grandi. C'est maintenant une jeune femme ayant forgé une bonne réputation sur l'île. Son sourire faisant parler les habitants: 'Elle pourrait donner le sourire à un marin s'il en restait!'. En effet nul n'a vu de marins depuis des années.",
+            "    Les mers et océans sont devenus impraticables, les navires audacieux qui osent prendre la mer peinent à sortir du port et finissent coulés quelques kilomètres plus loin. Impossibles aussi de faire décoller un avion, en altitude les vents sont trop forts et hasardeux. La voiture reste le moyen le plus sûr... Si on peut appeler ça un moyen de déplacement sûr, en effet des sorties de routes sont à prévoir.",
+            "    Depuis quelque temps des rumeurs circulent, une sirène de bateau retentirait dans différents ports à travers le monde. La jeune fille attend, qu'un jour peut-être elle puisse embarquer, naviguer et voir autre chose que ce minuscule bout de terre montagneux.",
+            "    Une nuit alors que Willow dort au coin de la cheminée, un livre ouvert posé sur la poitrine, emmitouflée dans un plaid; un son lourd et ronflant résonne dans toute la baie, créant un écho en heurtant les parois rocheuses de la côte. Tout le monde se réveille en sursaut! Willow saute de son lit et cours vers la fenêtre pour voir ce qui se passe. Un brouillard noir très épais recouvre l'entièreté de l'île, le vent pour une fois semble doux et peu fort, une odeur de brûlé submerge la baie. Au loin dans l'eau, se dessine une silhouette sombre entourée d'un halo de lumière.",
+            "    L'ombre ronfle comme un animal agonisant. Des lumières oranges commencent à jaillir de l'ombre, comme un incendie. C'est un bâtiment naval!"],
+        "choiceARef": "2-1",
+        "choiceBRef": "1-2",
+        "choiceATxt": "Rester à l'auberge",
+        "choiceBTxt": "Suivre le navire"
     },
     
     "1-2":
@@ -19,10 +26,10 @@
 
     "2-1":
     {
-        "text": ["2-1 Page une, c'est encore moins bo","2-1 Page deux c'est carrément pourave"],
-        "choiceARef": "1-1",
-        "choiceBRef": "1-2",
-        "choiceATxt": "1-1",
-        "choiceBTxt": "1-2"
+        "text": ["    Elle se dit qu'il est trop dangereux de sortir la nuit. Finalement Willow se replonge au fond du canapé et tente tant bien que mal de se rendormir. Après une rude nuit, l'aubergiste est porté disparus et l'épave d'un navire est retrouvé en piteux état écrasé contre la côte."],
+        "choiceARef": "DTR",
+        "choiceBRef": "DTR",
+        "choiceATxt": "asTutélauitdélessutitrréalide",
+        "choiceBTxt": "asTutélauitdélessutitrréalide"
     }
 }

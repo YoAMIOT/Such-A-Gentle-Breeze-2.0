@@ -96,16 +96,27 @@ public class TextScene : Control
 
     //ButtonPressed
     private void choiceAPressed(){
-        DataManager.currentScene = choiceASceneRef;
-        gatherAllSceneDatas(choiceASceneRef);
-        resetRTL();
-        SoundManager.playButtonSound();
+        if(choiceASceneRef == "DTR"){
+            GetTree().ChangeScene("res://scenes/DTR.tscn");
+        }
+        else
+        {
+            DataManager.currentScene = choiceASceneRef;
+            gatherAllSceneDatas(choiceASceneRef);
+            resetRTL();
+            SoundManager.playButtonSound();
+        }
     }
     private void choiceBPressed(){
-        DataManager.currentScene = choiceBSceneRef;
-        gatherAllSceneDatas(choiceBSceneRef);
-        resetRTL();
-        SoundManager.playButtonSound();
+        if(choiceBSceneRef == "DTR"){
+
+        }
+        else {
+            DataManager.currentScene = choiceBSceneRef;
+            gatherAllSceneDatas(choiceBSceneRef);
+            resetRTL();
+            SoundManager.playButtonSound();
+        }
     }
 
 
@@ -116,7 +127,6 @@ public class TextScene : Control
         RTL.BbcodeText = ((string)currentSceneText[page]);
         RTL.VisibleCharacters = 0;
         writing = true;
-        //TypingTimer.Paused = false;
         Buttons.Visible = false;
         ChoiceABtn.Text = choiceATxt;
         ChoiceBBtn.Text = choiceBTxt;

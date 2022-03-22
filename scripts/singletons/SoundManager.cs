@@ -4,6 +4,8 @@ using System;
 public class SoundManager : Node
 {
     private AudioStreamPlayer buttonSound;
+    private string buttonPressed;
+    private string buttonHover;
 
 
 

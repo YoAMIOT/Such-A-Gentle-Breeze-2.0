@@ -1,0 +1,331 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "BrokenScreen"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Polygon2D4:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.5, 2, 2.4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Polygon2D4:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 684, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.5, 2, 2.4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Polygon2D4:color:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.776471, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.4, 1.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Polygon2D4:color:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.776471, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.4, 1.5 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Polygon2D4:color:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.776471, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.4, 1.5 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Polygon2D5:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 782, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 2.4, 2.7 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Polygon2D5:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -121, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 2.4, 2.7 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Polygon2D5:color:r")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.745098, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 2.3, 2.4 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Polygon2D5:color:g")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.745098, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 2.3, 2.4 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Polygon2D5:color:b")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.745098, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 2.3, 2.4 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("Polygon2D:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 228, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5.2, 5.6 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Polygon2D:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1216, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5.2, 5.6 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("Polygon2D:rotation_degrees")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 58.2, -0.25, 0, 0.25, 0, 29.1, -0.25, 0, 0.25, 0, 43.6, -0.25, 0, 0.25, 0, 36.3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 4, 4.4, 4.8, 5.2, 6.2 )
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Polygon2D4:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Polygon2D4:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Polygon2D4:color:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.776471, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Polygon2D4:color:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0.776471, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Polygon2D4:color:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0.776471, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Polygon2D4:color:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Polygon2D5:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Polygon2D5:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Polygon2D5:color:r")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("Polygon2D5:color:g")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("Polygon2D5:color:b")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Polygon2D:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 58.2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("Polygon2D:position:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("Polygon2D:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[node name="DTR" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -726.0
+margin_top = -53.0
+margin_right = -242.0
+margin_bottom = -17.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = ExtResource( 1 )
+text = "Tu as détruit le tissu de la réalité..."
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+rotation = 1.01578
+polygon = PoolVector2Array( 0, 0, 904, 0, 848, 288, 920, 584, 1088, 632, 1192, 784, 1200, 840, 1200, 872, 1272, 984, 1288, 1080, 0, 1080 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( 1920, 0 )
+offset = Vector2( -1920, 0 )
+polygon = PoolVector2Array( 1920, 0, 1920, 368, 1848, 480, 1832, 480, 1792, 504, 1712, 472, 1552, 640, 1360, 592, 1312, 488, 1240, 616, 1112, 632, 1088, 632, 920, 584, 848, 288, 904, 0 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 1920, 368, 1920, 1080, 1288, 1080, 1272, 984, 1200, 872, 1200, 840, 1192, 784, 1088, 632, 1112, 632, 1240, 616, 1304, 648, 1328, 632, 1344, 720, 1424, 760, 1536, 688, 1552, 640, 1712, 472, 1792, 504, 1832, 480, 1848, 480 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+color = Color( 0.776471, 0.776471, 0.776471, 1 )
+polygon = PoolVector2Array( 1312, 488, 1360, 592, 1360, 616, 1360, 648, 1336, 656, 1328, 632, 1304, 648, 1240, 616 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 1552, 640, 1536, 688, 1424, 760, 1344, 720, 1328, 632, 1336, 656, 1360, 648, 1360, 592 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BrokenScreen = SubResource( 1 )
+anims/RESET = SubResource( 2 )
