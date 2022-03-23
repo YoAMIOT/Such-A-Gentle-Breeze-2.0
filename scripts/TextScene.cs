@@ -26,6 +26,7 @@ public class TextScene : Control
 
     //Ready Function
     public override void _Ready(){
+        //Node linking
         DataManager = GetNode<DataManager>("/root/DataManager");
         SoundManager = GetNode<SoundManager>("/root/SoundManager");
         RTL = GetNode<RichTextLabel>("RichTextLabel");
@@ -33,8 +34,8 @@ public class TextScene : Control
         ChoiceABtn = GetNode<Button>("Buttons/ChoiceABtn");
         ChoiceBBtn = GetNode<Button>("Buttons/ChoiceBBtn");
         PauseMenu = GetParent<Control>().GetNode<Control>("PauseMenu");
-        writing = true;
 
+        //Check if the player started a new campaign or loaded a saved game
         if(DataManager.currentScene != ""){
             gatherAllSceneDatas(DataManager.currentScene);
         }
@@ -43,11 +44,11 @@ public class TextScene : Control
             gatherAllSceneDatas(DataManager.currentScene);
         }
 
-        RTL.BbcodeText = ((string)currentSceneText[page]);
-        RTL.VisibleCharacters = 0;
-        ChoiceABtn.Text = choiceATxt;
-        ChoiceBBtn.Text = choiceBTxt;
+        //Reset the RTL
+        resetRTL();
 
+        //Signals
+        PauseMenu.Connect("pauseMenuSwitch", this, "switchPauseMenu");
         ChoiceABtn.Connect("pressed", this, "choiceAPressed");
         ChoiceBBtn.Connect("pressed", this, "choiceBPressed");
     }
