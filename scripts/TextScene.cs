@@ -76,6 +76,7 @@ public class TextScene : Control
             }
         }
         else if (inputEvent.IsActionPressed("ui_cancel")){
+            SoundManager.playButtonSound();
             switchPauseMenu();
         }
     }

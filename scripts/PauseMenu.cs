@@ -11,6 +11,7 @@ public class PauseMenu : Control
     private Control MainPauseMenu;
     private Button YesBtn;
     private Button NoBtn;
+    private SoundManager SoundManager;
     //Signal
     [Signal]
     public delegate void pauseMenuSwitch();
@@ -28,6 +29,7 @@ public class PauseMenu : Control
         MainPauseMenu = GetNode<Control>("Main");
         YesBtn = GetNode<Button>("WarnPopup/YesBtn");
         NoBtn = GetNode<Button>("WarnPopup/NoBtn");
+        SoundManager = GetNode<SoundManager>("/root/SoundManager");
 
         //Connect signals
         ContinueBtn.Connect("pressed", this, "continuePressed");
@@ -41,19 +43,23 @@ public class PauseMenu : Control
 
     //Button pressed
     private void continuePressed(){
+        SoundManager.playButtonSound();
         EmitSignal(nameof(pauseMenuSwitch));
     }
     private void optionsPressed(){
-        
+        SoundManager.playButtonSound();
     }
     private void mainMenuPressed(){
+        SoundManager.playButtonSound();
         MainPauseMenu.Visible = false;
         WarnPopup.Visible = true;
     }
     private void yesPressed(){
+        SoundManager.playButtonSound();
         GetTree().ChangeScene("res://scenes/GameScene.tscn");
     }
     private void noPressed(){
+        SoundManager.playButtonSound();
         WarnPopup.Visible = false;
         MainPauseMenu.Visible = true;
     }
