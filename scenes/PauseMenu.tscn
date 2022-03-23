@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ressources/styleBoxes/Hover.tres" type="StyleBox" id=2]
+[ext_resource path="res://ressources/styleBoxes/Pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://ressources/styleBoxes/Normal.tres" type="StyleBox" id=4]
+
+[node name="PauseMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.418
+anchor_top = 0.241
+anchor_right = 0.582
+anchor_bottom = 0.307
+margin_left = -0.559998
+margin_top = -0.279999
+margin_right = -157.44
+margin_bottom = -35.56
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Menu Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.473
+anchor_top = 0.483
+anchor_right = 0.527
+anchor_bottom = 0.517
+margin_left = -0.660034
+margin_top = 0.359985
+margin_right = 0.659973
+margin_bottom = -0.360046
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+text = "Options"
+
+[node name="Button2" type="Button" parent="."]
+anchor_left = 0.466
+anchor_top = 0.449
+anchor_right = 0.534
+anchor_bottom = 0.482
+margin_left = -0.220032
+margin_top = 0.0799561
+margin_right = 0.219971
+margin_bottom = 0.440002
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+text = "Continuer"
+
+[node name="Button3" type="Button" parent="."]
+anchor_left = 0.413
+anchor_top = 0.518
+anchor_right = 0.587
+anchor_bottom = 0.551
+margin_left = -0.460022
+margin_top = -0.440002
+margin_right = 0.459961
+margin_bottom = -0.0800171
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+text = "Retour au menu principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}

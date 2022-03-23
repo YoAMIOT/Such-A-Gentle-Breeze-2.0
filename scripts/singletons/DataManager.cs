@@ -8,6 +8,7 @@ public class DataManager : Node
     private string textFileFrPath = "res://ressources/JSON/TextFR.json";
     public Color uiColor;
     public string currentScene = "";
+    public bool popAnimDone = false;
 
 
 

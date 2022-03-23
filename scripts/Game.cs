@@ -19,7 +19,9 @@ public class Game : Control
     private Button backBtn;
     private DataManager DataManager;
     private SoundManager SoundManager;
+    private Control pauseMenu;
     private Control menuContainer;
+    private Control textScene;
     //Scene declaration
     private PackedScene TextGameplayScene;
 
@@ -44,6 +46,13 @@ public class Game : Control
         greenCount = GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/GreenCount");
         blueSlider = GetNode<HSlider>("MenuContainer/OptionsMenu/ColorPicker/BlueSlider");
         blueCount = GetNode<Label>("MenuContainer/OptionsMenu/ColorPicker/BlueCount");
+        pauseMenu = GetNode<Control>("PauseMenu");
+
+        //Kill the pop anim if needed
+        if(DataManager.popAnimDone == true){
+            GetNode<Control>("BootScreen").QueueFree();
+            mainMenu.Visible = true;
+        }
 
         //Loading the text gameplay scene
         TextGameplayScene = ResourceLoader.Load<PackedScene>("res://scenes/TextScene.tscn");
@@ -98,6 +107,7 @@ public class Game : Control
         AddChild(MainTextScene);
         menuContainer.QueueFree();
         SoundManager.playButtonSound();
+        textScene = GetNode<Control>("TextScene");
     }
     private void continueBtn_pressed(){
         DataManager.loadUserData();
@@ -105,6 +115,7 @@ public class Game : Control
         AddChild(MainTextScene);
         menuContainer.QueueFree();
         SoundManager.playButtonSound();
+        textScene = GetNode<Control>("TextScene");
     }
     private void optionsBtn_pressed(){
         mainMenu.Visible = !mainMenu.Visible;

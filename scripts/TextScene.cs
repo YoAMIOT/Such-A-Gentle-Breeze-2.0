@@ -10,6 +10,8 @@ public class TextScene : Control
     private Control Buttons;
     private Button ChoiceABtn;
     private Button ChoiceBBtn;
+    private Control PauseMenu;
+    private bool paused = false;
 
     //Variables
     private Godot.Collections.Dictionary currentSceneData;
@@ -30,6 +32,7 @@ public class TextScene : Control
         Buttons = GetNode<Control>("Buttons");
         ChoiceABtn = GetNode<Button>("Buttons/ChoiceABtn");
         ChoiceBBtn = GetNode<Button>("Buttons/ChoiceBBtn");
+        PauseMenu = GetParent<Control>().GetNode<Control>("PauseMenu");
         writing = true;
 
         if(DataManager.currentScene != ""){
@@ -53,7 +56,7 @@ public class TextScene : Control
 
     //Input function
     public override void _Input(InputEvent inputEvent){
-        if(inputEvent is InputEventMouseButton && inputEvent.IsPressed()){
+        if(inputEvent is InputEventMouseButton && inputEvent.IsPressed() && paused == false){
             if(RTL.VisibleCharacters == RTL.GetTotalCharacterCount()){
                 if (page < currentSceneText.Count - 1){
                     page += 1;
@@ -71,6 +74,18 @@ public class TextScene : Control
                 writing = false;
             }
         }
+        else if (inputEvent.IsActionPressed("ui_cancel")){
+            switchPauseMenu();
+        }
+    }
+
+
+
+    //Pause Menu switch
+    public void switchPauseMenu(){
+        paused = !paused;
+        this.Visible = !this.Visible;
+        PauseMenu.Visible = !PauseMenu.Visible;
     }
 
 
@@ -99,8 +114,7 @@ public class TextScene : Control
         if(choiceASceneRef == "DTR"){
             GetTree().ChangeScene("res://scenes/DTR.tscn");
         }
-        else
-        {
+        else{
             DataManager.currentScene = choiceASceneRef;
             gatherAllSceneDatas(choiceASceneRef);
             resetRTL();
@@ -109,7 +123,7 @@ public class TextScene : Control
     }
     private void choiceBPressed(){
         if(choiceBSceneRef == "DTR"){
-
+            GetTree().ChangeScene("res://scenes/DTR.tscn");
         }
         else {
             DataManager.currentScene = choiceBSceneRef;

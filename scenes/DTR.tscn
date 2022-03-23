@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ressources/font/TiwipiFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/DTR.cs" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BrokenScreen"
@@ -134,6 +135,66 @@ tracks/12/enabled = true
 tracks/12/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 58.2, -0.25, 0, 0.25, 0, 29.1, -0.25, 0, 0.25, 0, 43.6, -0.25, 0, 0.25, 0, 36.3, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 4, 4.4, 4.8, 5.2, 6.2 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("Polygon2D2:position:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 1920, -0.25, 0, 0.25, 0, 2960, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5.3, 5.6 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("Polygon2D2:position:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -752, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5.3, 5.6 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("Polygon2D2:rotation_degrees")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -72.7, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5.3, 5.6 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("Polygon2D3:position:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("Polygon2D3:position:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/18/type = "bezier"
+tracks/18/path = NodePath("Polygon2D3:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 14.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 7, 7.2 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -278,10 +339,31 @@ tracks/13/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
 }
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("Polygon2D2:position:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 1920, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("Polygon2D2:position:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
 
 [node name="DTR" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -317,7 +399,9 @@ offset = Vector2( -1920, 0 )
 polygon = PoolVector2Array( 1920, 0, 1920, 368, 1848, 480, 1832, 480, 1792, 504, 1712, 472, 1552, 640, 1360, 592, 1312, 488, 1240, 616, 1112, 632, 1088, 632, 920, 584, 848, 288, 904, 0 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="."]
-polygon = PoolVector2Array( 1920, 368, 1920, 1080, 1288, 1080, 1272, 984, 1200, 872, 1200, 840, 1192, 784, 1088, 632, 1112, 632, 1240, 616, 1304, 648, 1328, 632, 1344, 720, 1424, 760, 1536, 688, 1552, 640, 1712, 472, 1792, 504, 1832, 480, 1848, 480 )
+position = Vector2( 1088, 632 )
+offset = Vector2( -1088, -632 )
+polygon = PoolVector2Array( 1920, 368, 2036.65, 849.402, 1920, 1080, 1288, 1080, 1272, 984, 1200, 872, 1200, 840, 1192, 784, 1088, 632, 1112, 632, 1240, 616, 1304, 648, 1328, 632, 1344, 720, 1424, 760, 1536, 688, 1552, 640, 1712, 472, 1792, 504, 1832, 480, 1848, 480 )
 
 [node name="Polygon2D4" type="Polygon2D" parent="."]
 color = Color( 0.776471, 0.776471, 0.776471, 1 )
