@@ -3,15 +3,15 @@ using System;
 
 public class DTR : Control
 {
-    private AnimationPlayer animPlayer;
+    private AnimationPlayer AnimPlayer;
 
 
 
     //Ready function
     public override void _Ready(){
-        animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-        animPlayer.Play("BrokenScreen");
-        animPlayer.Connect("animation_finished", this, "animDone");
+        AnimPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+        AnimPlayer.Play("BrokenScreen");
+        AnimPlayer.Connect("animation_finished", this, "animDone");
     }
 
 

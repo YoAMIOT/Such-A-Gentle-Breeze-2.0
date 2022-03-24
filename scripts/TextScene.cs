@@ -11,7 +11,6 @@ public class TextScene : Control
     private Button ChoiceABtn;
     private Button ChoiceBBtn;
     private Control PauseMenu;
-    private bool paused = false;
 
     //Variables
     private Godot.Collections.Dictionary currentSceneData;
@@ -22,6 +21,7 @@ public class TextScene : Control
     private string choiceBTxt;
     private int page = 0;
     private bool writing;
+    private bool paused = false;
 
 
     //Ready Function
@@ -86,6 +86,9 @@ public class TextScene : Control
     //Pause Menu switch
     public void switchPauseMenu(){
         paused = !paused;
+        PauseMenu.GetNode<Control>("OptionsMenu").Visible = false;
+        PauseMenu.GetNode<Control>("WarnPopup").Visible = false;
+        PauseMenu.GetNode<Control>("Main").Visible = true;
         this.Visible = !this.Visible;
         PauseMenu.Visible = !PauseMenu.Visible;
     }

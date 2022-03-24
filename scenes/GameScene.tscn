@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/CRT_Shader.tscn" type="PackedScene" id=6]
 
 [node name="GameScene" type="Control"]
-modulate = Color( 0.184314, 0.878431, 0.0862745, 1 )
+modulate = Color( 0.768627, 0.466667, 0.117647, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )

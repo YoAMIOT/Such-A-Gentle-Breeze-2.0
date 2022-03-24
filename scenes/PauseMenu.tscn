@@ -72,6 +72,7 @@ __meta__ = {
 }
 
 [node name="Main" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -147,3 +148,190 @@ text = "Retour au menu principal"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="OptionsMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="Button" parent="OptionsMenu"]
+anchor_left = 0.443
+anchor_top = 0.734
+anchor_right = 0.557
+anchor_bottom = 0.805
+margin_left = -770.56
+margin_top = 167.28
+margin_right = -797.44
+margin_bottom = 167.6
+focus_neighbour_top = NodePath("../../MainMenu/ContinueBtn")
+focus_neighbour_bottom = NodePath("../../MainMenu/QuitBtn")
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 4 )
+text = "Retour"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UiColorLabel" type="Label" parent="OptionsMenu"]
+anchor_left = 0.343
+anchor_top = 0.269
+anchor_right = 0.657
+anchor_bottom = 0.335
+margin_left = 0.439941
+margin_top = -0.52005
+margin_right = -301.44
+margin_bottom = -35.8
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Couleur de l'interface"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPicker" type="Control" parent="OptionsMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedLabel" type="Label" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.479
+anchor_top = 0.388
+anchor_right = 0.521
+anchor_bottom = 0.421
+margin_left = -0.680054
+margin_top = -0.0400085
+margin_right = 0.679932
+margin_bottom = 0.319977
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Rouge"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedSlider" type="HSlider" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.314
+anchor_top = 0.393
+anchor_right = 0.686
+anchor_bottom = 0.407
+margin_left = -0.880005
+margin_top = 34.56
+margin_right = -0.120117
+margin_bottom = 35.44
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedCount" type="Label" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.692
+anchor_top = 0.415
+anchor_right = 0.725
+anchor_bottom = 0.448
+margin_left = -0.640015
+margin_top = -0.200012
+margin_bottom = 0.159973
+custom_fonts/font = ExtResource( 1 )
+text = "255"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreenLabel" type="Label" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.48
+anchor_top = 0.447
+anchor_right = 0.521
+anchor_bottom = 0.481
+margin_left = -0.600098
+margin_top = 0.239929
+margin_right = -0.320068
+margin_bottom = -0.480042
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Vert"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreenSlider" type="HSlider" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.314
+anchor_top = 0.452
+anchor_right = 0.686
+anchor_bottom = 0.467
+margin_left = -0.880005
+margin_top = 34.84
+margin_right = -0.120117
+margin_bottom = 34.64
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreenCount" type="Label" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.692
+anchor_top = 0.474
+anchor_right = 0.725
+anchor_bottom = 0.507
+margin_left = -0.640015
+margin_top = 0.0799561
+margin_bottom = 0.439941
+custom_fonts/font = ExtResource( 1 )
+text = "255"
+
+[node name="BlueLabel" type="Label" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.484
+anchor_top = 0.506
+anchor_right = 0.517
+anchor_bottom = 0.54
+margin_left = -0.28009
+margin_top = 0.519958
+margin_right = -0.640015
+margin_bottom = -0.200073
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Bleu"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlueSlider" type="HSlider" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.314
+anchor_top = 0.511
+anchor_right = 0.686
+anchor_bottom = 0.526
+margin_left = -0.880005
+margin_top = 35.1199
+margin_right = -0.120117
+margin_bottom = 34.92
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="BlueCount" type="Label" parent="OptionsMenu/ColorPicker"]
+anchor_left = 0.692
+anchor_top = 0.533
+anchor_right = 0.725
+anchor_bottom = 0.567
+margin_left = -0.640015
+margin_top = 0.359924
+margin_bottom = -0.360046
+custom_fonts/font = ExtResource( 1 )
+text = "255"
