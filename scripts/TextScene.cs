@@ -11,6 +11,8 @@ public class TextScene : Control
     private Button ChoiceABtn;
     private Button ChoiceBBtn;
     private Control PauseMenu;
+    private Vector2 smallBtn = new Vector2 (960, 248);
+    private Vector2 bigBtn = new Vector2 (1920, 248);
 
     //Variables
     private Godot.Collections.Dictionary currentSceneData;
@@ -127,15 +129,10 @@ public class TextScene : Control
         }
     }
     private void choiceBPressed(){
-        if(choiceBSceneRef == "DTR"){
-            GetTree().ChangeScene("res://scenes/DTR.tscn");
-        }
-        else {
-            DataManager.currentScene = choiceBSceneRef;
-            gatherAllSceneDatas(choiceBSceneRef);
-            resetRTL();
-            SoundManager.playButtonSound();
-        }
+        DataManager.currentScene = choiceBSceneRef;
+        gatherAllSceneDatas(choiceBSceneRef);
+        resetRTL();
+        SoundManager.playButtonSound();
     }
 
 
@@ -150,6 +147,15 @@ public class TextScene : Control
         ChoiceABtn.Text = choiceATxt;
         ChoiceBBtn.Text = choiceBTxt;
         DataManager.saveUserData();
+        //Checks if there's a B choice
+        if(choiceBTxt == "none"){
+            ChoiceBBtn.Visible = false;
+            ChoiceABtn.SetSize(bigBtn);
+        }
+        else{
+            ChoiceBBtn.Visible = true;
+            ChoiceABtn.SetSize(smallBtn);
+        }
     }
 
 

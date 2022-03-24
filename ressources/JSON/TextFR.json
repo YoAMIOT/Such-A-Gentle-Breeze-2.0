@@ -19,19 +19,19 @@
     {
         "text": ["    Une fois décidé Willow attrape ses affaires et s'habille en vitesse, manquant d'oublier ses indispensables lunettes sans lesquelles elle ne verrait pas grand-chose! Elle dégringole les étroits escaliers de l'auberge en trombe et tombe face à l'aubergiste qui l'attendait. Il a l'air d'avoir compris les intentions de la jeune fille et s'écarte donc de la porte sans dire un mot.",
             "    La jeune s'empresse de rejoindre le garage, elle enfourche sa moto, la démarre et met les gaz. Au bout de quelques centaines de mètres le chemin de terre se sépare. Sortir des sentiers est plus rapide mais plus dangereux, tandis que continuer sur le chemin est plus sûr."],
-        "choiceARef": "Sortir des sentiers",
-        "choiceBRef": "Rester sur le chemin",
-        "choiceATxt": "1-3",
-        "choiceBTxt": "1-4"
+        "choiceARef": "1-3",
+        "choiceBRef": "1-4",
+        "choiceATxt": "Sortir des sentiers",
+        "choiceBTxt": "Rester sur le chemin"
     },
 
     "1-3":
     {
         "text": ["    "],
-        "choiceARef": "Reprendre le chemin",
+        "choiceARef": "1-4",
         "choiceBRef": "none",
-        "choiceATxt": "1-4",
-        "choiceBTxt": "3-1"
+        "choiceATxt": "Reprendre le chemin",
+        "choiceBTxt": "none"
     },
 
     "1-4":
@@ -48,8 +48,8 @@
     {
         "text": ["    Elle se dit qu'il est trop dangereux de sortir la nuit. Finalement Willow se replonge au fond du canapé et tente tant bien que mal de se rendormir. Après une rude nuit, l'aubergiste est porté disparus et l'épave d'un navire est retrouvé en piteux état écrasé contre la côte."],
         "choiceARef": "DTR",
-        "choiceBRef": "DTR",
+        "choiceBRef": "none",
         "choiceATxt": "asTutélauitdélessutitrréalide",
-        "choiceBTxt": "lessuasuitdétTaliduéetélaitrr"
+        "choiceBTxt": "none"
     }
 }
