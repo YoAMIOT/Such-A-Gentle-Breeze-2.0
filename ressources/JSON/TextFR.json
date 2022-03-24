@@ -38,20 +38,42 @@
     "1-4":
     {
         "text": ["    Willow suit maintenant les sentiers depuis une vingtaine de minutes. Les cris d'agonie du navire sont de plus en plus fort et lourds. La silhouette semble se rapprocher rapidement de la côte, ayant pris de l'avance sur le navire la jeune fille s'arrête. Elle remarque très vite en regardant dans ses jumelles qu'il n'y a pas de port dans cette direction. Aussi elle réussit à apercevoir le nom du navire, le 'Gentle Breeze'.",
-            "    C'est alors que plusieurs flashs lumineux surviennent suivis de bruits de canons! Le brouillard se faisant moins épais, une seconde silhouette se démarque. Un cuirassé moitié plus gros que le Gentle Breeze! Deux navires au même endroit alors qu'on en voit plus depuis des années!"],
+            "    C'est alors que plusieurs flashs lumineux surviennent suivis de bruits de canons! Le brouillard se faisant moins épais, une seconde silhouette se démarque. Un cuirassé moitié plus gros que le Gentle Breeze! Deux navires au même endroit alors qu'on en voit plus depuis des années!",
+            "    Des signaux lumineux proviennent des deux embarcations; du morse, ils communiquent. Quelques secondes plus tard alors que toutes les communications ont cessées, les projecteurs du cuirassé sont braqués sur le Gentle Breeze. Grâce à cela Willow en perçoit les détails, une coque longue, large au centre et élancée à la proue. L'arrière du navire quant à lui est surplombé d'un moulin à vent et d'une tour de commandement tandis que l'avant est habillé d'une simple batterie de canons.",
+            "    Interrompant la contemplation de la jeune fille, les canons du cuirassé sont tirés visant directement le moulin. Les tirs le transpercent de part en part déclenchant un nouvel incendie...",
+            "    Toutes lumières éteintes le cuirassé prend la fuite laissant le Gentle Breeze à l'agonie, dégageant un titanesque nuage noir. De grandes flammes sortent des fenêtres du moulin, des canons et du pont. Le navire se dirige toujours droit vers la côte, s'il continue dans cette direction il la heurtera de plein fouet.",
+            "    Une dizaine de minutes plus tard le brasier flottant semble s'estomper au fur et à mesure que Willow se rapproche du navire."],
+        "choiceARef": "1-5",
+        "choiceBRef": "3-1",
+        "choiceATxt": "Rejoindre le navire",
+        "choiceBTxt": "Prévenir les secours"
+    },
+
+    "1-5":
+    {
+        "text": ["    "],
         "choiceARef": "",
         "choiceBRef": "",
         "choiceATxt": "",
         "choiceBTxt": ""
     },
 
-
     "2-1":
     {
         "text": ["    Elle se dit qu'il est trop dangereux de sortir la nuit. Finalement Willow se replonge au fond du canapé et tente tant bien que mal de se rendormir. Après une rude nuit, l'aubergiste est porté disparus et l'épave d'un navire est retrouvé en piteux état écrasé contre la côte."],
         "choiceARef": "DTR",
         "choiceBRef": "none",
-        "choiceATxt": "asTutélauitdélessutitrréalide",
+        "choiceATxt": "laisitsTduraeruéétlitdé",
+        "choiceBTxt": "none"
+    },
+
+    "3-1":
+    {
+        "text": ["    Willow décide de changer de route pour prévenir les secours! Elle se dirige donc vers le village le plus proche dans l'espoir de trouver un téléphone fonctionnel. La jauge à carburant est dans le rouge depuis son départ et tombe en panne d'essence au bout de quelques kilomètres. Elle descend de sa moto, prends ses affaires et fait le reste de la route à pied.",
+            "    Malheureusement le temps qu'elle prévienne les secours et qu'elle revienne le navire est déjà transformé en ruine, écrasé contre la côte."],
+        "choiceARef": "DTR",
+        "choiceBRef": "none",
+        "choiceATxt": "laisitsTduraeruéétlitdé",
         "choiceBTxt": "none"
     }
 }
