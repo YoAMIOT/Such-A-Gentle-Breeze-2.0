@@ -85,6 +85,20 @@ public class Game : Control
 
 
 
+    //Input function
+    public override void _Input(InputEvent inputEvent){
+        if(this.HasNode("MenuContainer") == true){
+            if (inputEvent.IsActionPressed("ui_cancel") && OptionsMenu.Visible == true){
+                SoundManager.playButtonSound();
+                OptionsMenu.Visible = false;
+                MainMenu.Visible = true;
+            }
+        }
+
+    }
+
+
+
     private void getOptionsData(){
         //Get the ui color from the data manager 
         RedSlider.Value = DataManager.uiColor.r;
@@ -127,7 +141,7 @@ public class Game : Control
         SoundManager.playButtonSound();
         getOptionsData();
         MainMenu.Visible = !MainMenu.Visible;
-        OptionsMenu.Visible= !OptionsMenu.Visible;
+        OptionsMenu.Visible = !OptionsMenu.Visible;
     }
     private void quitBtn_pressed(){
         GetTree().Quit();
