@@ -9,7 +9,7 @@
             "    Depuis quelque temps des rumeurs circulent, une sirène de bateau retentirait dans différents ports à travers le monde. La jeune fille attend, qu'un jour peut-être elle puisse embarquer, naviguer et voir autre chose que ce minuscule bout de terre montagneux.",
             "    Une nuit alors que Willow dort au coin de la cheminée, un livre ouvert posé sur la poitrine, emmitouflée dans un plaid; un son lourd et ronflant résonne dans toute la baie, créant un écho en heurtant les parois rocheuses de la côte. Tout le monde se réveille en sursaut! Willow saute de son lit et cours vers la fenêtre pour voir ce qui se passe. Un brouillard noir très épais recouvre l'entièreté de l'île, le vent pour une fois semble doux et peu fort, une odeur de brûlé submerge la baie. Au loin dans l'eau, se dessine une silhouette sombre entourée d'un halo de lumière.",
             "    L'ombre ronfle comme un animal agonisant. Des lumières oranges commencent à jaillir de l'ombre, comme un incendie. C'est un bâtiment naval!"],
-        "choiceARef": "2-1",
+        "choiceARef": "99-1",
         "choiceBRef": "1-2",
         "choiceATxt": "Rester à l'auberge",
         "choiceBTxt": "Suivre le navire"
@@ -44,12 +44,23 @@
             "    Toutes lumières éteintes le cuirassé prend la fuite laissant le Gentle Breeze à l'agonie, dégageant un titanesque nuage noir. De grandes flammes sortent des fenêtres du moulin, des canons et du pont. Le navire se dirige toujours droit vers la côte, s'il continue dans cette direction il la heurtera de plein fouet.",
             "    Une dizaine de minutes plus tard le brasier flottant semble s'estomper au fur et à mesure que Willow se rapproche du navire."],
         "choiceARef": "1-5",
-        "choiceBRef": "3-1",
+        "choiceBRef": "99-2",
         "choiceATxt": "Rejoindre le navire",
         "choiceBTxt": "Prévenir les secours"
     },
 
     "1-5":
+    {
+        "text": ["    La motarde avance vers le lieu d'impact prévu, descend de sa moto et s'assoit en attendant que le navire se rapproche. Malgré que les feux aient l'air de se calmer ils offrent encore un désolant spectacle à la jeune fille. Une paire de minutes plus tard le navire qui déjà au loin semblait grand devint un géant de métal en s'enfonçant sur la plage dans un état déplorable. L'ancre est larguée.",
+            "    Le toit du moulin est effondré, les pales sont rongées par les flammes, la couverture en bois du pont transformée en charbon. Le brasier se  calme de plus en plus. Aucun son autre que le crépitement des flammes et les bruits des vagues.",
+            "    Soudain, un cri retentit! Une voix rauque... Il reste quelqu'un à l'intérieur! Willow se précipite et grimpe sur un talus afin de sauter sur la proue du navire. Devant elle se trouve la trappe de chargement, plus loin derrière la batterie de canons elle entrevoie la porte du poste de commandement."],
+        "choiceARef": "99-3",
+        "choiceBRef": "1-6",
+        "choiceATxt": "Passer par la trappe",
+        "choiceBTxt": "Aller vers la cabine"
+    },
+
+    "1-6":
     {
         "text": ["    "],
         "choiceARef": "",
@@ -58,7 +69,7 @@
         "choiceBTxt": ""
     },
 
-    "2-1":
+    "99-1":
     {
         "text": ["    Elle se dit qu'il est trop dangereux de sortir la nuit. Finalement Willow se replonge au fond du canapé et tente tant bien que mal de se rendormir. Après une rude nuit, l'aubergiste est porté disparus et l'épave d'un navire est retrouvé en piteux état écrasé contre la côte."],
         "choiceARef": "DTR",
@@ -67,11 +78,20 @@
         "choiceBTxt": "none"
     },
 
-    "3-1":
+    "99-2":
     {
         "text": ["    Willow décide de changer de route pour prévenir les secours! Elle se dirige donc vers le village le plus proche dans l'espoir de trouver un téléphone fonctionnel. La jauge à carburant est dans le rouge depuis son départ et tombe en panne d'essence au bout de quelques kilomètres. Elle descend de sa moto, prends ses affaires et fait le reste de la route à pied.",
             "    Malheureusement le temps qu'elle prévienne les secours et qu'elle revienne le navire est déjà transformé en ruine, écrasé contre la côte."],
         "choiceARef": "DTR",
+        "choiceBRef": "none",
+        "choiceATxt": "laisitsTduraeruéétlitdé",
+        "choiceBTxt": "none"
+    },
+
+    "99-3":
+    {
+        "text": ["    Willow s'approche de la trappe, se penche et en prenant la poignée elle se brûle. Elle se retire rapidement et attrape une latte qui servait à la couverture du pont afin de forcer la poignée. Après plusieurs essais, la trappe semble se débloquer et s'ouvre violemment créant un retour de flamme. La jeune fille surprise, perds l'équilibre et tombe dans les flammes..."],
+        "choiceARef": "DTRWM",
         "choiceBRef": "none",
         "choiceATxt": "laisitsTduraeruéétlitdé",
         "choiceBTxt": "none"
