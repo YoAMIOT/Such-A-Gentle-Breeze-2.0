@@ -35,6 +35,11 @@ public class DataManager : Node
             uiColor = (Color)optionsFile.GetVar();
             optionsFile.Close();
         }
+        else{
+            uiColor.r = 0.76F;
+            uiColor.g = 0.5F;
+            uiColor.b =0.11F;
+        }
         setUiColor();
     }
 
@@ -92,6 +97,7 @@ public class DataManager : Node
         setUiColor();
     }
     public void setUiColor(){
+        uiColor.a = 1.0F;
         GetParent().GetNode<Control>("GameScene").Modulate = uiColor;
         saveOptionsData();
     }

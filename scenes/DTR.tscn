@@ -390,7 +390,6 @@ custom_fonts/font = ExtResource( 1 )
 text = "Tu as détruit le tissu de la réalité..."
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-rotation = 1.01578
 polygon = PoolVector2Array( 0, 0, 904, 0, 848, 288, 920, 584, 1088, 632, 1192, 784, 1200, 840, 1200, 872, 1272, 984, 1288, 1080, 0, 1080 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
@@ -404,12 +403,12 @@ offset = Vector2( -1088, -632 )
 polygon = PoolVector2Array( 1920, 368, 2036.65, 849.402, 1920, 1080, 1288, 1080, 1272, 984, 1200, 872, 1200, 840, 1192, 784, 1088, 632, 1112, 632, 1240, 616, 1304, 648, 1328, 632, 1344, 720, 1424, 760, 1536, 688, 1552, 640, 1712, 472, 1792, 504, 1832, 480, 1848, 480 )
 
 [node name="Polygon2D4" type="Polygon2D" parent="."]
-color = Color( 0.776471, 0.776471, 0.776471, 1 )
 polygon = PoolVector2Array( 1312, 488, 1360, 592, 1360, 616, 1360, 648, 1336, 656, 1328, 632, 1304, 648, 1240, 616 )
 
 [node name="Polygon2D5" type="Polygon2D" parent="."]
 polygon = PoolVector2Array( 1552, 640, 1536, 688, 1424, 760, 1344, 720, 1328, 632, 1336, 656, 1360, 648, 1360, 592 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 anims/BrokenScreen = SubResource( 1 )
 anims/RESET = SubResource( 2 )
